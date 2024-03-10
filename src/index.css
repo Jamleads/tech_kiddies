@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* Samples */
+.aclonica-regular {
+  font-family: "Aclonica", "Inter";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 64px;
+}
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+/* Real */
+body {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+.inter-small {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+.font-showcase {
+  font-family: "Aclonica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 64px;
+  line-height: 70px;
+}
+.course {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 500px; */
+  /* background-color: red; */
+}
+.course img {
+  width: 100%;
+}
+.bend1 {
+  rotate: -10deg;
+}
+.bend2 {
+  rotate: 10deg;
+}
+input:focus {
+  outline: none;
+}
+/* .float-btn-wrap {
+  position: fixed;
+  width: 100%;
+  height: 90vh;
+  z-index: -1;
+} */
+.float-btn {
+  position: fixed;
+  bottom: 20px;
+  z-index: 999;
+}
+@media (max-width: 488px) {
+  .nav-links {
+    display: none;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+  .show-text {
+    font-size: 37px;
+    line-height: 50px;
+  }
+  .course h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  button {
+    font-size: 12px;
+  }
+  .trusted {
+    font-size: 27px !important;
+  }
+  .kids-benefit h2 {
+    font-size: 20px !important;
+    line-height: 50px;
+  }
+  .testimonies h1 {
+    font-size: 18px !important;
+    line-height: 30px !important;
+  }
+  .newsletter p {
+    font-size: 16px !important;
+    line-height: 20px;
+  }
+}
