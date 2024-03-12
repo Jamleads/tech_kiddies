@@ -13,3 +13,4 @@ export { default as ContactIcon } from "../assets/contactIcon.svg";
 export { default as HeartHandshake } from "../assets/heart-handshake.svg";
 
 export { default as videoShow } from "../assets/vd2.mp4";
+export { default as LoaderAnimation } from "../assets/Loader.gif";
