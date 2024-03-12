@@ -4,22 +4,22 @@ export const navData = [
   {
     id: 1,
     page: "Our Programs",
-    to: "programs",
+    to: "#programs",
   },
   {
     id: 2,
     page: "About Us",
-    to: "about",
+    to: "#about",
   },
   {
     id: 3,
     page: "Testimonies",
-    to: "testimonies",
+    to: "#testimonies",
   },
   {
     id: 4,
     page: "Contact Us",
-    to: "contact",
+    to: "#contact",
   },
 ];
 

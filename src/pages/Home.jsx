@@ -27,6 +27,7 @@ import { testimonies } from "../utilities/data";
 import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [btnToSticky, setBtnToSticky] = useState(false);
   const [childTestimonies, setChildTestimonies] = useState(true);
   const xImgStyle =
     "img-qrap lg:w-[65px] lg:h-[65px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center";
@@ -35,15 +36,8 @@ const Home = () => {
     const buttonText = e.target.textContent.trim();
     setChildTestimonies(buttonText === "Children");
   };
-  const [btnToSticky, setBtnToSticky] = useState(false);
-
-  // window.addEventListener("scroll", () => {
-  //   setBtnToSticky(true);
-  // });
-
   useEffect(() => {
     const handleScroll = () => {
-      // to calculte the scroll
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop >= 255) {
@@ -54,6 +48,11 @@ const Home = () => {
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
+
+  const toNextPage = (e) => {
+    e.preventDefault();
+    window.location.href = "/our_programs";
+  };
 
   return (
     <>
@@ -67,7 +66,7 @@ const Home = () => {
             btnToSticky ? "float-btn" : ""
           }`}
         >
-          <Button btnText={"Explore Our Programs"} />
+          <Button btnText={"Explore Our Programs"} btnClick={toNextPage} />
           <Button
             btnText={"Join Our Parent Community"}
             btnStyle={`lg:px-5 px-3 py-3 bg-transparent border-0 underline text-xs inter-regular font-bold`}
@@ -81,7 +80,7 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="bg-lightYellow pt-1 my-10">
+      <section id="programs" className="bg-lightYellow pt-1 my-10">
         <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[27%] w-[90%] mx-auto flex items-center justify-between">
           <Button
             btnText={"Application"}
@@ -146,7 +145,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-24 flex flex-col lg:flex-row gap-16">
+        <div id="about" className="mt-24 flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/2 bg-darkerBlue">
             <div className="lg:w-[80%] w-[90%] mx-auto text-mainWhite py-10 flex flex-col gap-10">
               <div className="flex flex-col gap-5">
@@ -297,7 +296,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-lightYellow py-10 flex flex-col gap-10">
+      <section
+        id="testimonies"
+        className="bg-lightYellow py-10 flex flex-col gap-10"
+      >
         <span className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue flex items-center justify-between">
           <Button
             btnText={"Testimonies"}
@@ -366,7 +368,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="my-20 py-1">
+      <section id="contact" className="my-20 py-1">
         <div className="w-[90%] mx-auto bg-[#EFF2FB] h-[400px] rounded-3xl pt-10 flex flex-col gap-5">
           <h1 className="font-showcase text-center show-text">
             We Are Here For You!
