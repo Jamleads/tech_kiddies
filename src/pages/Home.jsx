@@ -25,6 +25,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { testimonies } from "../utilities/data";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [btnToSticky, setBtnToSticky] = useState(false);
@@ -49,11 +50,6 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  const toNextPage = (e) => {
-    e.preventDefault();
-    window.location.href = "/our_programs";
-  };
-
   return (
     <>
       <div className="my-10 flex flex-col items-center gap-7">
@@ -66,7 +62,9 @@ const Home = () => {
             btnToSticky ? "float-btn" : ""
           }`}
         >
-          <Button btnText={"Explore Our Programs"} btnClick={toNextPage} />
+          <Link to="our_programs">
+            <Button btnText={"Explore Our Programs"} />
+          </Link>
           <Button
             btnText={"Join Our Parent Community"}
             btnStyle={`lg:px-5 px-3 py-3 bg-transparent border-0 underline text-xs inter-regular font-bold`}

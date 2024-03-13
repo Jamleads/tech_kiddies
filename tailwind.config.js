@@ -9,10 +9,6 @@ export default {
         lightYellow: "#F8EEE8",
         baseOrange: "#F17B2C",
       },
-      fontFamily: {
-        // main: ["Aclonica", "sans-serif"],
-        // sub: ["Inter", "sans-serif"],
-      },
     },
   },
   plugins: [],

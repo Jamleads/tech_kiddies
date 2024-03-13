@@ -5,6 +5,9 @@ export { default as Logo } from "../assets/logo.png";
 export { default as TrustedImg } from "../assets/Trusted.png";
 export { default as ParentImg } from "../assets/Parent.png";
 export { default as UserImg } from "../assets/UserImg.png";
+export { default as DiscountImg } from "../assets/Discount.svg";
+export { default as ArrowDown } from "../assets/Arrow-down.png";
+export { default as CheckedIcon } from "../assets/check.svg";
 
 export { default as LibraryIcon } from "../assets/library-big.svg";
 export { default as HandsHeart } from "../assets/hand-heart.svg";
