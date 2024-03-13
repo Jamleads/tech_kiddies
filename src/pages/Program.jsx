@@ -10,9 +10,9 @@ import {
 import Button from "../components/Button";
 
 const Program = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="programShocase lg:h-[60vh] flex items-center justify-center">
@@ -175,7 +175,7 @@ const Program = () => {
         </div>
       </section>
 
-      {/* <section className="bg-darkerBlue lg:px-20 py-10 flex-col flex gap-10">
+      <section className="bg-darkerBlue lg:px-20 py-10 px-5 flex-col flex gap-10">
         <div className="py-[2px] px-[2px] rounded-full border-[2px] border-mainWhite lg:w-[27%] w-[90%] mx-auto flex items-center justify-between">
           <Button
             btnText={"Application"}
@@ -193,7 +193,7 @@ const Program = () => {
         <div className="border-[2px] text-mainWhite border-baseOrange rounded-lg flex flex-col items-center justify-center gap-5 py-10">
           <p>Comming soon</p>
           <h1 className="font-showcase !text-xl">Animation Studio</h1>
-          <p className=" text-xs">
+          <p className=" text-center text-xs">
             Get started with the ‘Tech Savvy Starter’ and become a confident
             computer user, master internet basics, and excel in digital
             communication
@@ -206,7 +206,7 @@ const Program = () => {
             btnText={"Pre- Register"}
           />
         </div>
-      </section> */}
+      </section>
 
       <section id="contact" className="my-20 py-1">
         <div className="w-[90%] mx-auto bg-[#EFF2FB] h-[400px] rounded-3xl pt-10 flex flex-col gap-5">
