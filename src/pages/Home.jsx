@@ -26,8 +26,11 @@ import { Navigation } from "swiper/modules";
 import { testimonies } from "../utilities/data";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ParentForm from "../components/ParentForm";
+import Modal from "../components/Modal";
 
 const Home = () => {
+  const [parentForm, setParentForm] = useState(false);
   const [btnToSticky, setBtnToSticky] = useState(false);
   const [childTestimonies, setChildTestimonies] = useState(true);
   const xImgStyle =
@@ -50,8 +53,35 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  const openParentForm = () => {
+    setParentForm(!parentForm);
+  };
+  const [open, setOpen] = useState(false);
+
+  const showEnrollForm = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
+      {/* Parent form modal */}
+      <div className={`${parentForm ? "" : "hidden"} bg-red-500`}>
+        <ParentForm closeModal={openParentForm} />
+      </div>
+      <div
+        onClick={openParentForm}
+        className={`${parentForm ? "" : "hidden"} modal-backdrop`}
+      ></div>
+
+      {/* Enroll form */}
+      <div className={`${open ? "" : "hidden"} bg-red-500`}>
+        <Modal closeModal={showEnrollForm} />
+      </div>
+      <div
+        onClick={showEnrollForm}
+        className={`${open ? "" : "hidden"} overflow-y-hidden modal-backdrop`}
+      ></div>
+
       <div className="my-10 flex flex-col items-center gap-7">
         <div className="show-text lg:w-[55%] w-[90%] mx-auto font-showcase text-center">
           Empowering kids to become innovators of the future
@@ -66,6 +96,7 @@ const Home = () => {
             <Button btnText={"Explore Our Programs"} />
           </Link>
           <Button
+            btnClick={openParentForm}
             btnText={"Join Our Parent Community"}
             btnStyle={`lg:px-5 px-3 py-3 bg-transparent border-0 underline text-xs inter-regular font-bold`}
           />
@@ -80,17 +111,21 @@ const Home = () => {
 
       <section id="programs" className="bg-lightYellow pt-1 my-10">
         <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[27%] w-[90%] mx-auto flex items-center justify-between">
-          <Button
-            btnText={"Application"}
-            btnStyle={
-              "border-[2px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
-            }
-          />
+          <Link to="our_programs">
+            <Button
+              btnText={"Application"}
+              btnStyle={
+                "border-[2px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
+              }
+            />
+          </Link>
 
-          <button className="py-[2px] px-2 bg-transparent flex items-center text-xs gap-2">
-            <span>Now accepting applications</span>
-            <img src={arrowRight} alt="" />
-          </button>
+          <Link to="our_programs">
+            <button className="py-[2px] px-2 bg-transparent flex items-center text-xs gap-2">
+              <span>Now accepting applications</span>
+              <img src={arrowRight} alt="" />
+            </button>
+          </Link>
         </div>
 
         <div
@@ -116,6 +151,7 @@ const Home = () => {
               <p className="inter-small font-thin">Ongoing</p>
               <h2 className="font-showcase">Introduction to Coding</h2>
               <Button
+                btnClick={showEnrollForm}
                 btnText={"Enroll Now"}
                 btnStyle={"rounded-full bg-baseOrange px-10 py-3"}
               />
@@ -134,6 +170,7 @@ const Home = () => {
               <p className="inter-small font-thin">Coming Soon</p>
               <h2 className="font-showcase">Animation Studio</h2>
               <Button
+                btnClick={showEnrollForm}
                 btnText={"Pre- Register"}
                 btnStyle={
                   "border-[2px] rounded-full border-baseOrange px-8 py-2 bg-transparent"
@@ -392,7 +429,7 @@ const Home = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <Button btnText={"Fill Contact Form"} />
+              <Button btnText={"Fill Contact Form"} btnClick={openParentForm} />
             </div>
           </div>
         </div>
@@ -409,12 +446,14 @@ const Home = () => {
                 We have amazing courses
               </h2>
               <p>Empowering kids to become future creators and innovators.</p>
-              <Button
-                btnText={"Explore Our Program"}
-                btnStyle={
-                  "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
-                }
-              />
+              <Link to="our_programs">
+                <Button
+                  btnText={"Explore Our Program"}
+                  btnStyle={
+                    "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
+                  }
+                />
+              </Link>
             </div>
             <div className="lg:w-1/2 py-10 px-5 bg-[#00ABFD] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
               <h2 className="font-shocase !text-[25px]">
@@ -422,6 +461,7 @@ const Home = () => {
               </h2>
               <p>Get Involved in Your Child’s Tech Journey.</p>
               <Button
+                btnClick={openParentForm}
                 btnText={"Join Our Community"}
                 btnStyle={
                   "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"

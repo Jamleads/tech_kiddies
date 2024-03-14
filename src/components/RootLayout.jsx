@@ -37,25 +37,30 @@ const RootLayout = () => {
               </Link>
             </div>
             <div className="nav-links">
-              <ul className="flex items-center gap-5">
-                {navData.map((page) => (
-                  <a key={page.id} href={page.to}>
-                    <li className="inter-small">{page.page}</li>
-                  </a>
-                ))}
-              </ul>
+              {location === "/our_programs" ? (
+                ""
+              ) : (
+                <ul className="flex items-center gap-5">
+                  {navData.map((page) => (
+                    <a key={page.id} href={page.to}>
+                      <li className="inter-small">{page.page}</li>
+                    </a>
+                  ))}
+                </ul>
+              )}
             </div>
             <div className="action">
-              <button
-                className={`${
-                  location === "/our_programs"
-                    ? " bg-baseOrange"
-                    : " bg-darkerBlue"
-                } px-5 py-3 rounded-full border-0 text-mainWhite text-xs`}
-                onClick={"btnClick"}
-              >
-                Explore Our Programs
-              </button>
+              <Link to="our_programs">
+                <button
+                  className={`${
+                    location === "/our_programs"
+                      ? " bg-baseOrange"
+                      : " bg-darkerBlue"
+                  } px-5 py-3 rounded-full border-0 text-mainWhite text-xs`}
+                >
+                  Explore Our Programs
+                </button>
+              </Link>
             </div>
           </div>
 

@@ -8,6 +8,7 @@ export { default as UserImg } from "../assets/UserImg.png";
 export { default as DiscountImg } from "../assets/Discount.svg";
 export { default as ArrowDown } from "../assets/Arrow-down.png";
 export { default as CheckedIcon } from "../assets/check.svg";
+export { default as KidImg1 } from "../assets/kid1.png";
 
 export { default as LibraryIcon } from "../assets/library-big.svg";
 export { default as HandsHeart } from "../assets/hand-heart.svg";

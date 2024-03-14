@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowDown,
   CheckedIcon,
@@ -8,20 +8,55 @@ import {
   arrowRight,
 } from "../assets";
 import Button from "../components/Button";
+import Modal from "../components/Modal";
+import ParentForm from "../components/ParentForm";
 
 const Program = () => {
+  const [open, setOpen] = useState(false);
+  const [parentForm, setParentForm] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const showModal = () => {
+    setOpen(!open);
+  };
+  const openParentForm = () => {
+    setParentForm(!parentForm);
+  };
   return (
     <>
+      <div className={`${parentForm ? "" : "hidden"} bg-red-500`}>
+        <ParentForm closeModal={openParentForm} />
+      </div>
+      <div
+        onClick={openParentForm}
+        className={`${parentForm ? "" : "hidden"} modal-backdrop`}
+      ></div>
+
+      <div className={`${open ? "" : "hidden"} bg-red-500`}>
+        <Modal closeModal={showModal} />
+      </div>
+      <div
+        onClick={showModal}
+        className={`${open ? "" : "hidden"} overflow-y-hidden modal-backdrop`}
+      ></div>
+
       <section className="programShocase lg:h-[60vh] flex items-center justify-center">
         <div className="=flex flex-col gap-10">
           <div className="text-center flex flex-col gap-5 mt-10 show-text2">
-            <h1 className="lg:w-[60%] mx-auto">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              className="lg:w-[60%] mx-auto"
+            >
               Develop your website in 8 weeks and win a free another course!
             </h1>
-            <p className="lg:w-[60%] mx-auto">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="lg:w-[60%] mx-auto"
+            >
               Become a confident computer user, master internet basics, and
               excel in digital communication. Tech Kiddies empowers kids with
               the 21st century digital skills to ignite innovation and
@@ -29,9 +64,14 @@ const Program = () => {
             </p>
           </div>
 
-          <div className="flex items-center justify-center lg:mt-10 mb-10">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex items-center justify-center lg:mt-10 mb-10"
+          >
             {/* <Link to="our_programs"> */}
             <Button
+              btnClick={showModal}
               btnText={"Explore Now"}
               btnStyle={`lg:px-5 px-3 py-3 bg-baseOrange border-0 text-xs inter-regular font-bold rounded-full`}
             />
@@ -53,16 +93,20 @@ const Program = () => {
 
               <div className="couseProMob flex items-center justify-between inter-small">
                 <div className="w-1/3 flex flex-col gap-5">
-                  <p>Course Duration:</p>
-                  <p>Class Times:</p>
-                  <p>Class Times:</p>
-                  <p>Installments: </p>
+                  <p data-aos="fade-down-right">Course Duration:</p>
+                  <p data-aos="fade-down-right">Class Times:</p>
+                  <p data-aos="fade-down-right">Class Times:</p>
+                  <p data-aos="fade-down-right">Installments: </p>
                 </div>
                 <div className="w-2/3 flex flex-col gap-5 font-bold">
-                  <p>8 weeks</p>
-                  <p>2 Days dedication a week</p>
-                  <p>Class Content + Live Virtual Training</p>
-                  <p>70% on Admission. 30% after 4 weeks</p>
+                  <p data-aos="fade-down-left">8 weeks</p>
+                  <p data-aos="fade-down-left">2 Days dedication a week</p>
+                  <p data-aos="fade-down-left">
+                    Class Content + Live Virtual Training
+                  </p>
+                  <p data-aos="fade-down-left">
+                    70% on Admission. 30% after 4 weeks
+                  </p>
                 </div>
               </div>
             </div>
@@ -92,11 +136,19 @@ const Program = () => {
                       key={each.id}
                       className="flex items-center lg:gap-10 gap-5"
                     >
-                      <div className="img-qrap lg:w-[35px] lg:h-[35px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center">
+                      <div
+                        data-aos="fade-up-right"
+                        className="img-qrap lg:w-[35px] lg:h-[35px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center"
+                      >
                         <img src={CheckedIcon} alt="" className="w-[50%]" />
                       </div>
 
-                      <p className="font-showcase !text-lg">{each.course}</p>
+                      <p
+                        data-aos="fade-up-let"
+                        className="font-showcase !text-lg"
+                      >
+                        {each.course}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -111,11 +163,19 @@ const Program = () => {
                       key={each.id}
                       className="flex items-center lg:gap-10 gap-5"
                     >
-                      <div className="img-qrap lg:w-[35px] lg:h-[35px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center">
+                      <div
+                        data-aos="fade-up-right"
+                        className="img-qrap lg:w-[35px] lg:h-[35px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center"
+                      >
                         <img src={CheckedIcon} alt="" className="w-[50%]" />
                       </div>
 
-                      <p className="font-showcase !text-lg">{each.detail}</p>
+                      <p
+                        data-aos="fade-up-left"
+                        className="font-showcase !text-lg"
+                      >
+                        {each.detail}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -136,16 +196,18 @@ const Program = () => {
 
                 <div className="couseProMob flex items-center justify-between inter-small mt-5">
                   <div className="w-1/3 flex flex-col gap-5">
-                    <p>Course Name:</p>
-                    <p>Course Duration:</p>
-                    <p>Class Times:</p>
-                    <p>Class Times:</p>
+                    <p data-aos="fade-down-right">Course Name:</p>
+                    <p data-aos="fade-down-right">Course Duration:</p>
+                    <p data-aos="fade-down-right">Class Times:</p>
+                    <p data-aos="fade-down-right">Class Times:</p>
                   </div>
                   <div className="w-2/3 flex flex-col gap-5 font-bold">
-                    <p>Tech-savvy star</p>
-                    <p>3 weeks</p>
-                    <p>2 Days dedication a week</p>
-                    <p>Class Content + Live Virtual Training</p>
+                    <p data-aos="fade-down-left">Tech-savvy star</p>
+                    <p data-aos="fade-down-left">3 weeks</p>
+                    <p data-aos="fade-down-left">2 Days dedication a week</p>
+                    <p data-aos="fade-down-left">
+                      Class Content + Live Virtual Training
+                    </p>
                   </div>
                 </div>
               </div>
@@ -157,11 +219,19 @@ const Program = () => {
                 <div className="flex flex-col gap-4 mt-5">
                   {Details2.map((each) => (
                     <div key={each.id} className="flex items-center gap-10">
-                      <div className="img-qrap lg:w-[35px] lg:h-[35px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center">
+                      <div
+                        data-aos="fade-down-right"
+                        className="img-qrap lg:w-[35px] lg:h-[35px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center"
+                      >
                         <img src={CheckedIcon} alt="" className="w-[50%]" />
                       </div>
 
-                      <p className="font-showcase !text-base">{each.detail}</p>
+                      <p
+                        data-aos="fade-down-left"
+                        className="font-showcase !text-base"
+                      >
+                        {each.detail}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -170,7 +240,7 @@ const Program = () => {
           </div>
 
           <div className="flex items-center justify-center">
-            <Button btnText={"Enroll Now"} />
+            <Button btnText={"Enroll Now"} btnClick={showModal} />
           </div>
         </div>
       </section>
@@ -190,7 +260,11 @@ const Program = () => {
           </button>
         </div>
 
-        <div className="border-[2px] text-mainWhite border-baseOrange rounded-lg flex flex-col items-center justify-center gap-5 py-10">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="700"
+          className="border-[2px] text-mainWhite border-baseOrange rounded-lg flex flex-col items-center justify-center gap-5 py-10"
+        >
           <p>Comming soon</p>
           <h1 className="font-showcase !text-xl">Animation Studio</h1>
           <p className=" text-center text-xs">
@@ -204,6 +278,7 @@ const Program = () => {
               "lg:px-5 px-3 py-3 bg-baseOrange border-0 text-xs inter-regular font-bold rounded-full"
             }
             btnText={"Pre- Register"}
+            btnClick={showModal}
           />
         </div>
       </section>
@@ -234,7 +309,7 @@ const Program = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <Button btnText={"Fill Contact Form"} />
+              <Button btnText={"Fill Contact Form"} btnClick={openParentForm} />
             </div>
           </div>
         </div>
@@ -264,6 +339,7 @@ const Program = () => {
               </h2>
               <p>Get Involved in Your Child’s Tech Journey.</p>
               <Button
+                btnClick={openParentForm}
                 btnText={"Join Our Community"}
                 btnStyle={
                   "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"

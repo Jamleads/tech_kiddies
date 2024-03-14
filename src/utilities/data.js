@@ -65,3 +65,41 @@ export const testimonies = [
       "Thank you Tech Kiddies for helping my child know so much about technology.",
   },
 ];
+
+export const moveAnimation = [
+  {
+    id: 1,
+    text: "Kid",
+    style: "w-[200px] bg-thePink",
+  },
+  {
+    id: 2,
+    text: "Tech",
+    style: "w-[200px] bg-theGreen",
+  },
+  {
+    id: 3,
+    text: "Code",
+    style: "w-[240px] bg-thePink",
+  },
+  {
+    id: 4,
+    text: "Script",
+    style: "w-[300px] bg-theYellow",
+  },
+  {
+    id: 5,
+    text: "Fun",
+    style: "w-[200px] bg-baseOrange",
+  },
+  {
+    id: 6,
+    text: "Game",
+    style: "w-[150px] bg-theGreen",
+  },
+  {
+    id: 7,
+    text: "Future",
+    style: "w-[300px] bg-theYellow",
+  },
+];
