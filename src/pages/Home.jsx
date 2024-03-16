@@ -21,7 +21,7 @@ import "aos/dist/aos.css";
 // Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-// required modules
+
 import { Navigation } from "swiper/modules";
 import { testimonies } from "../utilities/data";
 import { useEffect, useState } from "react";
