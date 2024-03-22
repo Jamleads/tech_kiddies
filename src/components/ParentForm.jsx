@@ -20,6 +20,7 @@ const ParentForm = ({ closeModal }) => {
                 Community.
               </p>
             </div>
+
             <form action="" method="" className="flex flex-col gap-5">
               <div className="">
                 <label htmlFor="name">Name</label> <br />

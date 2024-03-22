@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { navData } from "../utilities/data";
-import { LoaderAnimation, Logo } from "../assets";
+import { Logo } from "../assets";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
