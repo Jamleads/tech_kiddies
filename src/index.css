@@ -23,7 +23,7 @@
 body {
   background-color: #ffffff;
   font-family: "Inter", sans-serif;
-  scroll-behavior: smooth !important;
+  /* scroll-behavior: smooth !important; */
 }
 .inter-small {
   font-family: "Inter", sans-serif;
@@ -103,7 +103,60 @@ input:focus {
   animation: rotateImage 10s linear infinite; /* Adjust duration and timing function as needed */
 }
 
+/* jhgxdcgvh */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 999;
+}
+
+/* Styles for the backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+.imageSide {
+  width: 50%;
+  overflow: hidden;
+  background: linear-gradient(45deg, #2241b9 0%, #162664 100%);
+}
+.move-wrap {
+  display: flex;
+  align-items: center;
+  animation: linear infinite 5s animateOverTop;
+  rotate: -10deg;
+  margin-top: 100px;
+}
+.down {
+  animation: linear infinite 5s animateOverTop;
+  rotate: 10deg;
+  margin-top: 260px;
+}
+.child-container {
+  flex-shrink: 0;
+}
+
+@keyframes animateOverTop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
 @media (max-width: 488px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .nav-links {
     display: none;
   }
@@ -156,55 +209,5 @@ input:focus {
   }
   .imageSide {
     display: none;
-  }
-}
-
-/* jhgxdcgvh */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  z-index: 999;
-}
-
-/* Styles for the backdrop */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998;
-}
-.imageSide {
-  width: 50%;
-  overflow: hidden;
-  background: linear-gradient(45deg, #2241b9 0%, #162664 100%);
-}
-.move-wrap {
-  display: flex;
-  align-items: center;
-  animation: linear infinite 5s animateOverTop;
-  rotate: -10deg;
-  margin-top: 100px;
-}
-.down {
-  animation: linear infinite 5s animateOverTop;
-  rotate: 10deg;
-  margin-top: 260px;
-}
-.child-container {
-  flex-shrink: 0;
-}
-
-@keyframes animateOverTop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1000px);
   }
 }

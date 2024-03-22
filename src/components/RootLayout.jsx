@@ -22,7 +22,6 @@ const RootLayout = () => {
 
   return (
     <>
-      {/* {domLoaded ? ( */}
       <div>
         <div
           className={` ${
@@ -68,11 +67,6 @@ const RootLayout = () => {
           <Outlet />
         </div>
       </div>
-      {/* ) : (
-        <div className="h-[100vh] w-full bg-mainWhite flex items-center justify-center">
-          <img src={LoaderAnimation} alt="loaer" className="m-auto" />
-        </div>
-      )} */}
     </>
   );
 };

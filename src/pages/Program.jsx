@@ -99,12 +99,12 @@ const Program = () => {
                   <p data-aos="fade-down-right">Installments: </p>
                 </div>
                 <div className="w-2/3 flex flex-col gap-5 font-bold">
-                  <p data-aos="fade-down-left">8 weeks</p>
-                  <p data-aos="fade-down-left">2 Days dedication a week</p>
-                  <p data-aos="fade-down-left">
+                  <p data-aos="fade-down-right">8 weeks</p>
+                  <p data-aos="fade-down-right">2 Days dedication a week</p>
+                  <p data-aos="fade-down-right">
                     Class Content + Live Virtual Training
                   </p>
-                  <p data-aos="fade-down-left">
+                  <p data-aos="fade-down-right">
                     70% on Admission. 30% after 4 weeks
                   </p>
                 </div>
@@ -171,7 +171,7 @@ const Program = () => {
                       </div>
 
                       <p
-                        data-aos="fade-up-left"
+                        data-aos="fade-up-right"
                         className="font-showcase !text-lg"
                       >
                         {each.detail}
@@ -202,10 +202,10 @@ const Program = () => {
                     <p data-aos="fade-down-right">Class Times:</p>
                   </div>
                   <div className="w-2/3 flex flex-col gap-5 font-bold">
-                    <p data-aos="fade-down-left">Tech-savvy star</p>
-                    <p data-aos="fade-down-left">3 weeks</p>
-                    <p data-aos="fade-down-left">2 Days dedication a week</p>
-                    <p data-aos="fade-down-left">
+                    <p data-aos="fade-down-right">Tech-savvy star</p>
+                    <p data-aos="fade-down-right">3 weeks</p>
+                    <p data-aos="fade-down-right">2 Days dedication a week</p>
+                    <p data-aos="fade-down-right">
                       Class Content + Live Virtual Training
                     </p>
                   </div>
@@ -227,7 +227,7 @@ const Program = () => {
                       </div>
 
                       <p
-                        data-aos="fade-down-left"
+                        data-aos="fade-down-right"
                         className="font-showcase !text-base"
                       >
                         {each.detail}

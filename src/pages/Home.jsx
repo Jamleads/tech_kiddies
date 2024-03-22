@@ -64,7 +64,7 @@ const Home = () => {
 
   return (
     <>
-      {/* Parent form modal */}
+      {/* Parent form modal and its overlay */}
       <div className={`${parentForm ? "" : "hidden"} bg-red-500`}>
         <ParentForm closeModal={openParentForm} />
       </div>
@@ -73,7 +73,7 @@ const Home = () => {
         className={`${parentForm ? "" : "hidden"} modal-backdrop`}
       ></div>
 
-      {/* Enroll form */}
+      {/* Enroll form  and its overlay*/}
       <div className={`${open ? "" : "hidden"} bg-red-500`}>
         <Modal closeModal={showEnrollForm} />
       </div>
@@ -103,7 +103,7 @@ const Home = () => {
         </div>
 
         <div className="w-[90%] mx-auto lg:h-[70vh]">
-          <video controls className="w-full h-full object-fill">
+          <video autoPlay controls className="w-full h-full object-fill">
             <source src={videoShow} type="video/mp4" />
           </video>
         </div>
@@ -159,7 +159,7 @@ const Home = () => {
           </div>
 
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             className="lg:w-1/2 rounded-xl bg course course1 relative"
           >
             <img src={animationCourseImage} alt="" />
@@ -198,7 +198,7 @@ const Home = () => {
                   safety while you watch them build amazing tech projects.
                 </p>
 
-                <p data-aos="fade-up-left" className="inter-small font-light">
+                <p data-aos="fade-up-right" className="inter-small font-light">
                   <span className="text-baseOrange">Tech kiddies</span>{" "}
                   Influence : Empowering kids to become future creators and
                   innovators.
@@ -206,10 +206,15 @@ const Home = () => {
               </div>
 
               <div className="relative text-mainWhite">
-                <img data-aos="flip-right" src={TrustedImg} alt="" />
+                <img
+                  data-aos="flip-right"
+                  src={TrustedImg}
+                  alt=""
+                  className="w-full"
+                />
 
                 <p
-                  data-aos="fade-up-left"
+                  data-aos="fade-up-right"
                   className="trusted absolute top-5 left-0 font-showcase !text-[40px]"
                 >
                   Trusted by:
@@ -246,7 +251,7 @@ const Home = () => {
                       </div>
                     </div>
 
-                    <div data-aos="fade-up-left">
+                    <div data-aos="fade-up-right">
                       <h2 className="font-showcase !text-[25px]">
                         {each.title}
                       </h2>
