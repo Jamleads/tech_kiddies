@@ -21,7 +21,11 @@ const ParentForm = ({ closeModal }) => {
               </p>
             </div>
 
-            <form action="" method="" className="flex flex-col gap-5">
+            <form
+              action="https://formspree.io/f/xkndveeq"
+              method="POST"
+              className="flex flex-col gap-5"
+            >
               <div className="">
                 <label htmlFor="name">Name</label> <br />
                 <input
@@ -35,7 +39,7 @@ const ParentForm = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="phone_number">Phone Number</label> <br />
                 <input
-                  type="text"
+                  type="tel"
                   name="phone_number"
                   id="phone_number"
                   placeholder="Enter your phone pumber"
@@ -45,7 +49,7 @@ const ParentForm = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="email">Email</label> <br />
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   name="email"
                   placeholder="Enter your email"
@@ -66,7 +70,10 @@ const ParentForm = ({ closeModal }) => {
                 />
               </div>
 
-              <button className="py-3 rounded-full bg-darkerBlue border-0 text-mainWhite text-xs w-full">
+              <button
+                className="py-3 rounded-full bg-darkerBlue border-0 text-mainWhite text-xs w-full"
+                type="submit"
+              >
                 Submit
               </button>
             </form>

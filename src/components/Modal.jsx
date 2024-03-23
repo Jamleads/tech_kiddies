@@ -19,7 +19,11 @@ const Modal = ({ closeModal }) => {
                 Please enter your details.
               </p>
             </div>
-            <form action="" method="" className="flex flex-col gap-5">
+            <form
+              action="https://formspree.io/f/xvoebyyv"
+              method="POST"
+              className="flex flex-col gap-5"
+            >
               <div className="">
                 <label htmlFor="name">Name</label> <br />
                 <input
@@ -33,7 +37,7 @@ const Modal = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="phone_number">Phone Number</label> <br />
                 <input
-                  type="text"
+                  type="tel"
                   name="phone_number"
                   id="phone_number"
                   placeholder="Enter your phone pumber"
@@ -43,7 +47,7 @@ const Modal = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="email">Email</label> <br />
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   name="email"
                   placeholder="Enter your email"
@@ -67,24 +71,27 @@ const Modal = ({ closeModal }) => {
 
               <div className="">
                 <label htmlFor="location">
-                  how did you hear about Tech Kiddies?
-                </label>{" "}
+                  How did you hear about Tech Kiddies?
+                </label>
                 <br />
                 <select
-                  name="location"
-                  id="location"
+                  name="how_did_you_hear_about_tech_kiddies"
+                  id="how_did_you_hear_about_tech_kiddies"
                   className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
                 >
                   <option value="" className="font-lighter">
                     Select option
                   </option>
-                  <option value="nigeria">Friend</option>
-                  <option value="unitesd state">News</option>
-                  <option value="kenya">Social Media</option>
-                  <option value="gambia">Event</option>
+                  <option value="friend">Friend</option>
+                  <option value="news">News</option>
+                  <option value="social">Social Media</option>
+                  <option value="event">Event</option>
                 </select>
               </div>
-              <button className="py-3 rounded-full bg-darkerBlue border-0 text-mainWhite text-xs w-full">
+              <button
+                className="py-3 rounded-full bg-darkerBlue border-0 text-mainWhite text-xs w-full"
+                type="submit"
+              >
                 Submit
               </button>
             </form>

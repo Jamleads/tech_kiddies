@@ -303,8 +303,8 @@ const Program = () => {
 
               <p className="text-center inter-small lg:w-[80%] mx-auto">
                 For any questions, including tracking your order, please contact
-                us via email hellous@gmail.com. Or you can fill the contact form
-                by clicking on the button below.
+                us via email techkiddiescontact@gmail.com Or you can fill the
+                contact form by clicking on the button below.
               </p>
             </div>
 
