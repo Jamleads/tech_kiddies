@@ -29,6 +29,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ParentForm from "../components/ParentForm";
 import Modal from "../components/Modal";
+import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   const [parentForm, setParentForm] = useState(false);
@@ -491,17 +492,7 @@ const Home = () => {
                 <p className="inter-small">
                   Empowering kids to become future creators and innovators.
                 </p>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="text"
-                    className="bg-mainWhite px-4 py-3 rounded-full text-black lg:w-[320px] w-[200px]"
-                    placeholder="Email Address"
-                  />
-                  <Button
-                    btnText={"Subscribe"}
-                    btnStyle={`bg-baseOrange text-mainWhite text-xs rounded-full lg:px-10 px-5 py-4`}
-                  />
-                </div>
+                <Newsletter />
               </div>
 
               <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">
