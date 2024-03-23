@@ -89,7 +89,9 @@ const Home = () => {
         </div>
 
         <div
-          className={`mainBtn flex items-center justify-center ${
+          className={`${
+            open || parentForm ? "hidden" : ""
+          } mainBtn flex items-center justify-center ${
             btnToSticky ? "float-btn" : ""
           }`}
         >
