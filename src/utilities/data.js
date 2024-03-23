@@ -1,4 +1,4 @@
-import { ParentImg } from "../assets";
+import { ChildImage, ParentImg } from "../assets";
 
 export const navData = [
   {
@@ -43,10 +43,9 @@ export const testimonies = [
   {
     id: 3,
     isParent: false,
-    img: { ParentImg },
-    name: "Kelven Kings",
-    testMessage:
-      "Thank you Tech Kiddies for helping my child know so much about technology.",
+    img: { ChildImage },
+    name: "Khadijat",
+    testMessage: "I love how my teacher teaches me coding",
   },
   {
     id: 4,
@@ -59,10 +58,10 @@ export const testimonies = [
   {
     id: 5,
     isParent: false,
-    img: { ParentImg },
+    img: { ChildImage },
     name: "Kelven Aliyu",
     testMessage:
-      "Thank you Tech Kiddies for helping my child know so much about technology.",
+      "Thank you Tech Kiddies for helping me know so much about technology.",
   },
 ];
 

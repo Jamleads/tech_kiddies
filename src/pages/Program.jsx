@@ -34,7 +34,7 @@ const Program = () => {
         className={`${parentForm ? "" : "hidden"} modal-backdrop`}
       ></div>
 
-      <div className={`${open ? "" : "hidden"} bg-red-500`}>
+      <div className={`${open ? "" : "hidden"}`}>
         <Modal closeModal={showModal} />
       </div>
       <div
@@ -42,7 +42,7 @@ const Program = () => {
         className={`${open ? "" : "hidden"} overflow-y-hidden modal-backdrop`}
       ></div>
 
-      <section className="programShocase lg:h-[60vh] flex items-center justify-center">
+      <section className="programShocase lg:h-[60vh] flex items-end justify-end">
         <div className="=flex flex-col gap-10">
           <div className="text-center flex flex-col gap-5 mt-10 show-text2">
             <h1
@@ -50,7 +50,7 @@ const Program = () => {
               data-aos-duration="1500"
               className="lg:w-[60%] mx-auto"
             >
-              Develop your website in 8 weeks and win a free another course!
+              Develop your website in 8 weeks plus a free course!
             </h1>
             <p
               data-aos="fade-up"
@@ -184,7 +184,7 @@ const Program = () => {
           </div>
         </div>
 
-        <div className="details2 py-20 flex flex-col gap-10">
+        <div className="details2 py-20 flex flex-col gap-10" id="courses">
           <h2 className="font-showcase text-center">
             Details of the Free Course
           </h2>
@@ -326,12 +326,14 @@ const Program = () => {
                 We have amazing courses
               </h2>
               <p>Empowering kids to become future creators and innovators.</p>
-              <Button
-                btnText={"Explore Our Program"}
-                btnStyle={
-                  "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
-                }
-              />
+              <a href="#courses">
+                <Button
+                  btnText={"Explore Our Program"}
+                  btnStyle={
+                    "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
+                  }
+                />
+              </a>
             </div>
             <div className="lg:w-1/2 py-10 px-5 bg-[#00ABFD] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
               <h2 className="font-shocase !text-[25px]">

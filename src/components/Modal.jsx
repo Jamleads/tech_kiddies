@@ -4,7 +4,7 @@ import { moveAnimation } from "../utilities/data";
 
 const Modal = ({ closeModal }) => {
   return (
-    <div className="modal w-[70%] mx-auto bg-red-400">
+    <div className="modal lg:w-[70%] mx-auto w-[90%]">
       <div className=" flex">
         <div className="lg:w-1/2 formSide">
           <div className="w-[80%] mx-auto py-10">
@@ -66,7 +66,10 @@ const Modal = ({ closeModal }) => {
               </div>
 
               <div className="">
-                <label htmlFor="location">Where are you located?</label> <br />
+                <label htmlFor="location">
+                  how did you hear about Tech Kiddies?
+                </label>{" "}
+                <br />
                 <select
                   name="location"
                   id="location"

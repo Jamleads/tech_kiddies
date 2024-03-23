@@ -1,4 +1,5 @@
 import {
+  ChildImage,
   ContactIcon,
   HandsHeart,
   HeartHandshake,
@@ -398,8 +399,12 @@ const Home = () => {
                       </div>
                     </div>
 
-                    <div className="lg:w-[45%] h-full">
-                      <img src={ParentImg} alt="" className="w-full h-full" />
+                    <div className="lg:w-[45%] h-full reviewImage">
+                      <img
+                        src={each.isParent === true ? ParentImg : ChildImage}
+                        alt=""
+                        className="w-full h-full"
+                      />
                     </div>
                   </div>
                 </SwiperSlide>
@@ -428,8 +433,8 @@ const Home = () => {
 
               <p className="text-center inter-small lg:w-[80%] mx-auto">
                 For any questions, including tracking your order, please contact
-                us via email hellous@gmail.com. Or you can fill the contact form
-                by clicking on the button below.
+                us via email techkiddiescontact@gmail.com Or you can fill the
+                contact form by clicking on the button below.
               </p>
             </div>
 
@@ -516,8 +521,8 @@ const Home = () => {
                 <div className="text-mainWhite !text-[]">
                   <h1 className="font-showcase !text-3xl">Contact</h1>
                   <ul className="flex flex-col gap-3">
-                    <li>+234 8124 574 84</li>
-                    <li>hello@techkides.com</li>
+                    <li>09060995945</li>
+                    <li>techkiddiescontact@gmail.com</li>
                   </ul>
                 </div>
               </div>

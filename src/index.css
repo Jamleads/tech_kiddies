@@ -55,7 +55,8 @@ body {
 .bend2 {
   rotate: 10deg;
 }
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 }
 .float-btn {
@@ -208,6 +209,9 @@ input:focus {
     line-height: 30px !important;
   }
   .imageSide {
+    display: none;
+  }
+  .reviewImage {
     display: none;
   }
 }

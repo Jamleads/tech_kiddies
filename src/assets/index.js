@@ -4,6 +4,7 @@ export { default as animationCourseImage } from "../assets/Course-animation.png"
 export { default as Logo } from "../assets/logo.png";
 export { default as TrustedImg } from "../assets/Trusted.png";
 export { default as ParentImg } from "../assets/Parent.png";
+export { default as ChildImage } from "../assets/childImage.avif";
 export { default as UserImg } from "../assets/UserImg.png";
 export { default as DiscountImg } from "../assets/Discount.svg";
 export { default as ArrowDown } from "../assets/Arrow-down.png";
