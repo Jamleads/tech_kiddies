@@ -10,6 +10,9 @@ import {
 import Button from "../components/Button";
 import Modal from "../components/Modal";
 import ParentForm from "../components/ParentForm";
+import { Link } from "react-router-dom";
+import Newsletter from "../components/Newsletter";
+import { footerSubLinks } from "../utilities/data";
 
 const Program = () => {
   const [open, setOpen] = useState(false);
@@ -315,7 +318,7 @@ const Program = () => {
         </div>
       </section>
 
-      <section className="bg-darkerBlue lg:rounded-t-[6rem] rounded-t-3xl pb-10 mt-[28rem] lg:h-[450px]">
+      <section className="bg-darkerBlue lg:rounded-t-[4rem] rounded-t-3xl pb-10 md:mt-[15rem] mt-[28rem] lg:h-[400px]">
         <div className="w-[90%] mx-auto py-1">
           <div
             data-aos="zoom-in"
@@ -326,14 +329,14 @@ const Program = () => {
                 We have amazing courses
               </h2>
               <p>Empowering kids to become future creators and innovators.</p>
-              <a href="#courses">
+              <Link to="our_programs">
                 <Button
                   btnText={"Explore Our Program"}
                   btnStyle={
                     "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
                   }
                 />
-              </a>
+              </Link>
             </div>
             <div className="lg:w-1/2 py-10 px-5 bg-[#00ABFD] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
               <h2 className="font-shocase !text-[25px]">
@@ -359,48 +362,11 @@ const Program = () => {
                 <p className="inter-small">
                   Empowering kids to become future creators and innovators.
                 </p>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="text"
-                    className="bg-mainWhite px-4 py-3 rounded-full text-black lg:w-[320px] w-[200px]"
-                    placeholder="Email Address"
-                  />
-                  <Button
-                    btnText={"Subscribe"}
-                    btnStyle={`bg-baseOrange text-mainWhite text-xs rounded-full lg:px-10 px-5 py-4`}
-                  />
-                </div>
-              </div>
 
-              <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">
-                <div className="text-mainWhite">
-                  <h1 className="font-showcase !text-3xl">Company</h1>
-                  <ul className="flex flex-col gap-3">
-                    <li>About Us</li>
-                    <li>Testimonies</li>
-                    <li>Contatc Us</li>
-                  </ul>
-                </div>
-                <div className="text-mainWhite !text-[]">
-                  <h1 className="font-showcase !text-3xl">Security</h1>
-                  <ul className="flex flex-col gap-3">
-                    <li>Privacy Policy</li>
-                    <li>Terms & Condition</li>
-                  </ul>
-                </div>
-                <div className="text-mainWhite !text-[]">
-                  <h1 className="font-showcase !text-3xl">Contact</h1>
-                  <ul className="flex flex-col gap-3">
-                    <li>+234 8124 574 84</li>
-                    <li>hello@techkides.com</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 text-mainWhite flex lg:flex-row flex-col-reverse gap-5 items-center justify-between">
-              <div className="lg:w-1/2 text-xs">
-                <p>
+                <Newsletter />
+                <p className="text-xs">
+                  Designed by{" "}
+                  <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}
                   <a
                     href="https://jamleads.netlify.com/"
@@ -409,35 +375,23 @@ const Program = () => {
                   >
                     Jamleads
                   </a>
-                  , &copy; 2023 Invavest Ltd
+                  , &copy; 2024 Tech Kiddies
                 </p>
               </div>
 
-              <div className="lg:w-1/2 grid grid-cols-2 lg:flex items-center gap-5">
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  YouTube
-                </a>
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  Linkedin
-                </a>
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  Twitter
-                </a>
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  Facebook
-                </a>
+              <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">
+                {footerSubLinks.map((each, index) => (
+                  <div key={index} className="text-mainWhite !text-[]">
+                    <h1 className="font-showcase !text-2xl">{each.title}</h1>
+                    <ul className="flex flex-col gap-3 text-xs">
+                      {each.links.map((each, index) => (
+                        <Link key={index} to={each.link}>
+                          <li>{each.title}</li>
+                        </Link>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

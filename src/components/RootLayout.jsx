@@ -8,7 +8,6 @@ const RootLayout = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const path = useLocation();
   const location = path.pathname;
-  console.log("location", location);
 
   useEffect(() => {
     const handleDOMLoaded = () => {
@@ -26,7 +25,9 @@ const RootLayout = () => {
         <div
           className={` ${
             location === "/our_programs"
-              ? " border-baseOrange absolute left-[5%] right-[50%] bg-mainWhite"
+              ? "border-baseOrange absolute left-[5%] right-[50%] bg-mainWhite"
+              : location === "/subscribe"
+              ? "border-darkerBlue absolute left-[5%] right-[50%] bg-mainWhite"
               : " border-darkerBlue"
           } nav flex items-center justify-between w-[90%] mx-auto rounded-full mt-6 border-2 py-[2px] px-[3px]`}
         >
@@ -36,17 +37,13 @@ const RootLayout = () => {
             </Link>
           </div>
           <div className="nav-links">
-            {location === "/our_programs" ? (
-              ""
-            ) : (
-              <ul className="flex items-center gap-5">
-                {navData.map((page) => (
-                  <a key={page.id} href={page.to}>
-                    <li className="inter-small">{page.page}</li>
-                  </a>
-                ))}
-              </ul>
-            )}
+            <ul className="flex items-center gap-5">
+              {navData.map((page) => (
+                <a key={page.id} href={page.to}>
+                  <li className="inter-small">{page.page}</li>
+                </a>
+              ))}
+            </ul>
           </div>
           <div className="action">
             <Link to="our_programs">

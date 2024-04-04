@@ -1,11 +1,4 @@
 import {
-  ChildImage,
-  ContactIcon,
-  HandsHeart,
-  HeartHandshake,
-  LibraryIcon,
-  MessageCircleHeart,
-  ParentImg,
   TrustedImg,
   UserImg,
   animationCourseImage,
@@ -14,7 +7,6 @@ import {
   videoShow,
 } from "../assets";
 import Button from "../components/Button";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // AOS Style
 import "aos/dist/aos.css";
@@ -23,25 +15,22 @@ import "aos/dist/aos.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { Navigation } from "swiper/modules";
-import { testimonies } from "../utilities/data";
+import { footerSubLinks, kidBenefit } from "../utilities/data";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ParentForm from "../components/ParentForm";
 import Modal from "../components/Modal";
 import Newsletter from "../components/Newsletter";
+import Pricing from "../components/Pricing";
+import Testimonies from "../components/Testimonies";
 
 const Home = () => {
   const [parentForm, setParentForm] = useState(false);
   const [btnToSticky, setBtnToSticky] = useState(false);
-  const [childTestimonies, setChildTestimonies] = useState(true);
+
   const xImgStyle =
     "img-qrap lg:w-[65px] lg:h-[65px] w-[40px] h-[40px] bg-mainWhite rounded-full flex items-center justify-center";
 
-  const switchTestimonies = (e) => {
-    const buttonText = e.target.textContent.trim();
-    setChildTestimonies(buttonText === "Children");
-  };
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -93,7 +82,7 @@ const Home = () => {
           className={`${
             open || parentForm ? "hidden" : ""
           } mainBtn flex items-center justify-center ${
-            btnToSticky ? "float-btn" : ""
+            btnToSticky ? "float-btn bg-baseOrange rounded-2xl" : ""
           }`}
         >
           <Link to="our_programs">
@@ -106,7 +95,7 @@ const Home = () => {
           />
         </div>
 
-        <div className="w-[90%] mx-auto lg:h-[70vh]">
+        <div className="w-[90%] mx-auto lg:h-[70vh] border-2 border-baseOrange">
           <video autoPlay controls className="w-full h-full object-fill">
             <source src={videoShow} type="video/mp4" />
           </video>
@@ -114,7 +103,7 @@ const Home = () => {
       </div>
 
       <section id="programs" className="bg-lightYellow pt-1 my-10">
-        <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[27%] w-[90%] mx-auto flex items-center justify-between">
+        <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[22%] w-[90%] mx-auto flex items-center justify-between">
           <Link to="our_programs">
             <Button
               btnText={"Application"}
@@ -182,6 +171,10 @@ const Home = () => {
               />
             </div>
           </div>
+        </div>
+
+        <div className="bg-[#fff]">
+          <Pricing atHome={true} />
         </div>
 
         <div id="about" className="mt-24 flex flex-col lg:flex-row gap-16">
@@ -340,80 +333,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section
-        id="testimonies"
-        className="bg-lightYellow py-10 flex flex-col gap-10"
-      >
-        <span className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue flex items-center justify-between">
-          <Button
-            btnText={"Testimonies"}
-            btnStyle={
-              "border-[2px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
-            }
-          />
-
-          <button className="py-[2px] text-xs px-[2px] bg-transparent flex items-center gap-2">
-            <span>Parent</span>
-            <img src={arrowRight} alt="" />
-          </button>
-        </span>
-
-        <h1 className="font-showcase text-center show-text">What People Say</h1>
-
-        <div className="w-[200px] mx-auto flex items-center justify-between px-[4px] py-[2px] border-darkerBlue border-[2px] rounded-full">
-          <Button
-            btnClick={(e) => switchTestimonies(e)}
-            btnText={"Parents"}
-            btnStyle={`${
-              childTestimonies
-                ? "bg-transparent text-darkerBlue"
-                : "bg-darkerBlue text-mainWhite"
-            } text-xs rounded-full px-5 py-[4px] `}
-          />
-          <Button
-            btnClick={(e) => switchTestimonies(e)}
-            btnText={"Children"}
-            btnStyle={`${
-              childTestimonies
-                ? "bg-darkerBlue text-mainWhite"
-                : "bg-transparent text-darkerBlue"
-            } text-xs rounded-full px-5 py-[4px] `}
-          />
-        </div>
-
-        <div data-aos="zoom-in" className="lg:w-[80%] w-[90%] mx-auto">
-          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-            {testimonies
-              .filter((item) => item.isParent === !childTestimonies)
-              .map((each) => (
-                <SwiperSlide key={each.id}>
-                  <div className="testimonies lg:h-[350px] flex lg:flex-row flex-col items-center">
-                    <div className="lg:w-[55%] lg:px-16 px-8 lg:h-full h-[400px] flex items-center justify-center bg-mainWhite lg:rounded-s-2xl">
-                      <div className="text-darkerBlue flex flex-col gap-5">
-                        <h1 className="inter-small !text-[25px] !leading-10 !font-light">
-                          {each.testMessage}
-                        </h1>
-                        <div className="name">
-                          <p>{each.name}</p>
-                          <span className=" font-thin">
-                            {each.isParent === true ? "Parent" : "Children"}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="lg:w-[45%] h-full reviewImage">
-                      <img
-                        src={each.isParent === true ? ParentImg : ChildImage}
-                        alt=""
-                        className="w-full h-full"
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-          </Swiper>
-        </div>
+      <section>
+        <Testimonies />
       </section>
 
       <section id="contact" className="my-20 py-1">
@@ -448,7 +369,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-darkerBlue lg:rounded-t-[6rem] rounded-t-3xl pb-10 mt-[28rem] lg:h-[450px]">
+      <section className="bg-darkerBlue lg:rounded-t-[4rem] rounded-t-3xl pb-10 md:mt-[15rem] mt-[28rem] lg:h-[400px]">
         <div className="w-[90%] mx-auto py-1">
           <div
             data-aos="zoom-in"
@@ -493,37 +414,9 @@ const Home = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-              </div>
-
-              <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">
-                <div className="text-mainWhite">
-                  <h1 className="font-showcase !text-3xl">Company</h1>
-                  <ul className="flex flex-col gap-3">
-                    <li>About Us</li>
-                    <li>Testimonies</li>
-                    <li>Contatc Us</li>
-                  </ul>
-                </div>
-                <div className="text-mainWhite !text-[]">
-                  <h1 className="font-showcase !text-3xl">Security</h1>
-                  <ul className="flex flex-col gap-3">
-                    <li>Privacy Policy</li>
-                    <li>Terms & Condition</li>
-                  </ul>
-                </div>
-                <div className="text-mainWhite !text-[]">
-                  <h1 className="font-showcase !text-3xl">Contact</h1>
-                  <ul className="flex flex-col gap-3">
-                    <li>09060995945</li>
-                    <li>techkiddiescontact@gmail.com</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 text-mainWhite flex lg:flex-row flex-col-reverse gap-5 items-center justify-between">
-              <div className="lg:w-1/2 text-xs">
-                <p>
+                <p className="text-xs">
+                  Designed by{" "}
+                  <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}
                   <a
                     href="https://jamleads.netlify.com/"
@@ -532,35 +425,23 @@ const Home = () => {
                   >
                     Jamleads
                   </a>
-                  , &copy; 2023 Invavest Ltd
+                  , &copy; 2024 Tech Kiddies
                 </p>
               </div>
 
-              <div className="lg:w-1/2 grid grid-cols-2 lg:flex items-center gap-5">
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  YouTube
-                </a>
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  Linkedin
-                </a>
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  Twitter
-                </a>
-                <a
-                  href=""
-                  className="px-7 py-3 rounded-full border-[1px] border-mianWhite text-mainWhite inter-small"
-                >
-                  Facebook
-                </a>
+              <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">
+                {footerSubLinks.map((each, index) => (
+                  <div key={index} className="text-mainWhite !text-[]">
+                    <h1 className="font-showcase !text-2xl">{each.title}</h1>
+                    <ul className="flex flex-col gap-3 text-xs">
+                      {each.links.map((each, index) => (
+                        <Link key={index} to={each.link}>
+                          <li>{each.title}</li>
+                        </Link>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -571,40 +452,3 @@ const Home = () => {
 };
 
 export default Home;
-
-const kidBenefit = [
-  {
-    id: 1,
-    img: LibraryIcon,
-    title: "Learning Experience",
-    detail:
-      "We offer interactive learning experiences designed to engage and inspire the kids.",
-  },
-  {
-    id: 2,
-    img: HandsHeart,
-    title: "Hands-on Experience",
-    detail:
-      "We provide hands-on experiences that ignite curiosity and foster creativity.",
-  },
-  {
-    id: 3,
-    img: MessageCircleHeart,
-    title: "Needs and Interest",
-    detail:
-      "Our curriculum is tailored to meet the needs and interest of each student.",
-  },
-  {
-    id: 4,
-    img: ContactIcon,
-    title: "Expert Teachers",
-    detail:
-      "Our expert teachers are passionate about technology and dedicated to helping students succeed.",
-  },
-  {
-    id: 5,
-    img: HeartHandshake,
-    title: "Community Support",
-    detail: "Kids community programs for our tech kiddies.",
-  },
-];

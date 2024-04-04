@@ -1,20 +1,38 @@
-import { ChildImage, ParentImg } from "../assets";
+import {
+  ChildImage,
+  ParentImg,
+  ContactIcon,
+  HandsHeart,
+  HeartHandshake,
+  LibraryIcon,
+  MessageCircleHeart,
+  CodeSquare,
+  CodeBrowser,
+  Skew,
+  ArtFusion,
+  Film,
+} from "../assets";
 
 export const navData = [
   {
     id: 1,
     page: "Our Programs",
-    to: "#programs",
+    to: "our_programs",
+  },
+  {
+    id: 5,
+    page: "Subscriptions",
+    to: "subscribe",
   },
   {
     id: 2,
     page: "About Us",
-    to: "#about",
+    to: "#about" || "/",
   },
   {
     id: 3,
     page: "Testimonies",
-    to: "#testimonies",
+    to: "#testimonies" || "/",
   },
   {
     id: 4,
@@ -100,5 +118,283 @@ export const moveAnimation = [
     id: 7,
     text: "Future",
     style: "w-[300px] bg-theYellow",
+  },
+];
+export const kidBenefit = [
+  {
+    id: 1,
+    img: LibraryIcon,
+    title: "Learning Experience",
+    detail:
+      "We offer interactive learning experiences designed to engage and inspire the kids.",
+  },
+  {
+    id: 2,
+    img: HandsHeart,
+    title: "Hands-on Experience",
+    detail:
+      "We provide hands-on experiences that ignite curiosity and foster creativity.",
+  },
+  {
+    id: 3,
+    img: MessageCircleHeart,
+    title: "Needs and Interest",
+    detail:
+      "Our curriculum is tailored to meet the needs and interest of each student.",
+  },
+  {
+    id: 4,
+    img: ContactIcon,
+    title: "Expert Teachers",
+    detail:
+      "Our expert teachers are passionate about technology and dedicated to helping students succeed.",
+  },
+  {
+    id: 5,
+    img: HeartHandshake,
+    title: "Community Support",
+    detail: "Kids community programs for our tech kiddies.",
+  },
+];
+
+export const subscriotionCourse = [
+  {
+    icon: CodeSquare,
+    bgColor: "bg-[#F0FEFACC]",
+    title: "Begin Your Adventure",
+    detail: "Basic to Advanced Front End",
+    subDetails: "Development",
+  },
+  {
+    icon: CodeBrowser,
+    bgColor: "bg-[#EDE8FBCC]",
+    title: "Embark on a Journey",
+    detail: "Basic to Advanced Back End",
+    subDetails: "Development",
+  },
+  {
+    icon: Skew,
+    bgColor: "bg-[#FBEDCBCC]",
+    title: "Ignite Creativity",
+    detail: "Basic to Advanced Animation",
+    subDetails: "Course",
+  },
+  {
+    icon: ArtFusion,
+    bgColor: "bg-[#D9FFC1CC]",
+    title: "Art Fusion",
+    detail: "Graphics Design for Young",
+    subDetails: "Artists",
+  },
+  {
+    icon: Film,
+    bgColor: "bg-[#F4D6F6CC]",
+    title: "Transform Creations",
+    detail: "Basic to Advanced Video",
+    subDetails: "Editing",
+  },
+];
+
+export const pricingData = [
+  {
+    id: 1,
+    title: "Basic - Tier",
+    price: "10,000 / $10",
+    discountText: "Ongoing Discount for early subscribers",
+    discountPrice: "= 9,000 / $9",
+    addedPcakage: [
+      {
+        id: 1,
+        title: "Access to Class Resources",
+      },
+      {
+        id: 2,
+        title: "Engaging Classroom plus Quiz sections",
+      },
+      {
+        id: 3,
+        title: "Tech Kiddies Community Slots",
+      },
+      {
+        id: 4,
+        title: "Class Presence Record",
+      },
+      {
+        id: 5,
+        title: "Certificate upon completion",
+      },
+      {
+        id: 6,
+        title: "Slot to partake in Tech Kiddies Exhibition",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Mid - Tier",
+    price: "20,000 / $20",
+    discountText: "Ongoing Discount for early subscribers",
+    discountPrice: "= 18,000 / $18",
+    addedPcakage: [
+      {
+        id: 1,
+        title: "All Basic Access",
+      },
+      {
+        id: 2,
+        title: "Automatic 2 Times Teacher’s Presence",
+      },
+      {
+        id: 3,
+        title: "Grading and Report Sheet",
+      },
+      {
+        id: 4,
+        title: "Certificate upon completion",
+      },
+      {
+        id: 5,
+        title: "Slot to partake in Tech Kiddies Exhibition",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Premium - Tier",
+    price: "N50,000 / $48",
+    discountText: "Ongoing Discount for early subscribers",
+    discountPrice: "= #48,000/ $39",
+    addedPcakage: [
+      {
+        id: 1,
+        title: "All Basic Access",
+      },
+      {
+        id: 2,
+        title: "Automatic Teacher Presence Slots every month",
+      },
+      {
+        id: 3,
+        title: "Personalized grading and report sheet",
+      },
+      {
+        id: 4,
+        title: "Personalized mentorship",
+      },
+      {
+        id: 5,
+        title: "Certificate upon completion",
+      },
+      {
+        id: 6,
+        title: "Slot to partake in Tech Kiddies Exhibition",
+      },
+    ],
+  },
+];
+
+export const faqData = [
+  {
+    title:
+      "My kids close late at school, is there a way they can learn these skills?",
+    content:
+      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+  },
+  {
+    title: "How do I make payment?",
+    content:
+      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+  },
+  {
+    title: "What ages are these courses made for ?",
+    content:
+      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+  },
+  {
+    title: "Can my 3 year old get started with Tech?",
+    content:
+      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+  },
+];
+
+export const footerSubLinks = [
+  {
+    id: 1,
+    title: "Company",
+    links: [
+      {
+        id: 1,
+        title: "About Us",
+        link: "/",
+      },
+      {
+        id: 2,
+        title: "Testimonies",
+        link: "/",
+      },
+      {
+        id: 3,
+        title: "Contatc Us",
+        link: "/",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Security",
+    links: [
+      {
+        id: 1,
+        title: "Privacy Policy",
+        link: "/",
+      },
+      {
+        id: 2,
+        title: "Terms & Condition",
+        link: "/",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Contact",
+    links: [
+      {
+        id: 1,
+        title: "+234 8124 574 84",
+        link: "/",
+      },
+      {
+        id: 2,
+        title: "hello@techkiddies.com",
+        link: "/",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Socials",
+    links: [
+      {
+        id: 1,
+        title: "YouTube",
+        link: "/",
+      },
+      {
+        id: 2,
+        title: "LinkedIn",
+        link: "/",
+      },
+      {
+        id: 3,
+        title: "Twitter",
+        link: "/",
+      },
+      {
+        id: 4,
+        title: "Facebook",
+        link: "/",
+      },
+    ],
   },
 ];

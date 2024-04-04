@@ -5,7 +5,7 @@ import { moveAnimation } from "../utilities/data";
 const ParentForm = ({ closeModal }) => {
   return (
     <div className="modal lg:w-[70%] w-[90%] mx-auto bg-red-400">
-      <div className=" md:flex">
+      <div className=" flex">
         <div className="md:w-1/2 formSide">
           <div className="md:w-[80%] w-[90%] mx-auto py-10">
             <div className="brand">

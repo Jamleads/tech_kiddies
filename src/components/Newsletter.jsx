@@ -27,7 +27,7 @@ const Newsletter = () => {
         name="email"
         onChange={handleEmailChange}
         className="bg-mainWhite px-4 py-3 rounded-full text-black lg:w-[320px] w-[200px]"
-        placeholder="Email Address news"
+        placeholder="Email Address"
       />
       <Button
         btnType={"submit"}

@@ -10,6 +10,8 @@ export { default as DiscountImg } from "../assets/Discount.svg";
 export { default as ArrowDown } from "../assets/Arrow-down.png";
 export { default as CheckedIcon } from "../assets/check.svg";
 export { default as KidImg1 } from "../assets/kid1.png";
+export { default as SubHeroImage } from "../assets/sub_hero_image.png";
+export { default as SubVector } from "../assets/Sub_vector.png";
 
 export { default as LibraryIcon } from "../assets/library-big.svg";
 export { default as HandsHeart } from "../assets/hand-heart.svg";
@@ -19,3 +21,12 @@ export { default as HeartHandshake } from "../assets/heart-handshake.svg";
 
 export { default as videoShow } from "../assets/tech_kiddies.mp4";
 export { default as LoaderAnimation } from "../assets/Loader.gif";
+
+export { default as CodeSquare } from "../assets/code-square.png";
+export { default as CodeBrowser } from "../assets/code-browser.png";
+export { default as Skew } from "../assets/skew.png";
+export { default as ArtFusion } from "../assets/art_fusion.png";
+export { default as Film } from "../assets/film.png";
+
+export { default as MinusCircle } from "../assets/minus-circle.png";
+export { default as PlusCircle } from "../assets/plus-circle.png";

@@ -154,6 +154,16 @@ select:focus {
   }
 }
 
+.hover-effect {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.1) !important;
+  background-color: #f8eee8;
+}
+
 @media (max-width: 488px) {
   body {
     overflow-x: hidden !important;
@@ -213,5 +223,12 @@ select:focus {
   }
   .reviewImage {
     display: none;
+  }
+  .pricing h1 {
+    font-size: 30px !important;
+    line-height: 30px !important;
+  }
+  .pricing h2 {
+    font-size: 35px !important;
   }
 }
