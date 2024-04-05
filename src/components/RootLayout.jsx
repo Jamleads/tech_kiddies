@@ -8,6 +8,7 @@ const RootLayout = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const path = useLocation();
   const location = path.pathname;
+  console.log("location", location);
 
   useEffect(() => {
     const handleDOMLoaded = () => {
@@ -39,9 +40,13 @@ const RootLayout = () => {
           <div className="nav-links">
             <ul className="flex items-center gap-5">
               {navData.map((page) => (
-                <a key={page.id} href={page.to}>
-                  <li className="inter-small">{page.page}</li>
-                </a>
+                <li key={page.id} className="inter-small">
+                  {page.to.startsWith("#") ? (
+                    <a href={location === "/" ? page.to : "/"}>{page.page}</a>
+                  ) : (
+                    <Link to={page.to}>{page.page}</Link>
+                  )}
+                </li>
               ))}
             </ul>
           </div>
