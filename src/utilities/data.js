@@ -261,9 +261,9 @@ export const pricingData = [
   {
     id: 3,
     title: "Premium - Tier",
-    price: "N50,000 / $48",
+    price: "N50,000 / $50",
     discountText: "Ongoing Discount for early subscribers",
-    discountPrice: "= #48,000/ $39",
+    discountPrice: "= #48,000/ $48",
     addedPcakage: [
       {
         id: 1,
@@ -366,7 +366,7 @@ export const footerSubLinks = [
       },
       {
         id: 2,
-        title: "hello@techkiddies.com",
+        title: "techkiddiescontact@gmail.com",
         link: "/",
       },
     ],
@@ -378,22 +378,27 @@ export const footerSubLinks = [
       {
         id: 1,
         title: "YouTube",
-        link: "/",
+        link: "https://www.youtube.com/@TechKiddies",
       },
       {
         id: 2,
         title: "LinkedIn",
-        link: "/",
+        link: "https://www.linkedin.com/company/tech-kiddies/",
       },
       {
         id: 3,
         title: "Twitter",
-        link: "/",
+        link: "https://twitter.com/techkiddies",
       },
       {
         id: 4,
         title: "Facebook",
-        link: "/",
+        link: "https://www.facebook.com/profile.php?id=100075856481853&mibextid=LQQJ4d",
+      },
+      {
+        id: 5,
+        title: "Intagram",
+        link: "https://www.instagram.com/techkiddies_?igsh=c3BsZmRjb2Z2cWlj&utm_source=qr",
       },
     ],
   },

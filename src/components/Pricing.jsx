@@ -78,7 +78,7 @@ const Pricing = ({ atHome }) => {
                   btnText={"Start For Free"}
                 />
                 <p className="text-xs text-center">
-                  7-day trial. No credit card required
+                  First - class trial. No credit card required
                 </p>
               </div>
 
