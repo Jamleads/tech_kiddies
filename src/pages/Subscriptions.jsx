@@ -234,7 +234,7 @@ const Subscriptions = () => {
           </div>
 
           <div>
-            <div className="flex lg:flex-row flex-col lg:items-center justify-between mt-10">
+            <div className="flex lg:flex-row flex-col-reverse lg:items-center justify-between mt-10">
               <div className="lg:w-1/2 newsletter text-mainWhite flex flex-col lg:gap-5 gap-2">
                 <p className="font-showcase !leading-8 !text-[27px] ">
                   Subscribe to our Newsletter
@@ -264,9 +264,9 @@ const Subscriptions = () => {
                     <h1 className="font-showcase !text-2xl">{each.title}</h1>
                     <ul className="flex flex-col gap-3 text-xs">
                       {each.links.map((each, index) => (
-                        <Link key={index} to={each.link}>
-                          <li>{each.title}</li>
-                        </Link>
+                        <li key={index}>
+                          <a href={each.link}>{each.title}</a>
+                        </li>
                       ))}
                     </ul>
                   </div>
