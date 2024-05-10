@@ -1,4 +1,9 @@
 import {
+  Star1,
+  Star2,
+  Star3,
+  Star4,
+  Thumbnail,
   TrustedImg,
   UserImg,
   animationCourseImage,
@@ -73,7 +78,28 @@ const Home = () => {
         className={`${open ? "" : "hidden"} overflow-y-hidden modal-backdrop`}
       ></div>
 
-      <div className="my-10 flex flex-col items-center gap-7">
+      <div className="relative my-10 flex flex-col items-center gap-7">
+        {/* stars */}
+        <img
+          src={Star1}
+          alt="star"
+          className=" absolute bg-re-600 left-[150px] top-[150px]"
+        />
+        <img
+          src={Star2}
+          alt="star"
+          className=" absolute bg-re-600 right-[150px] top-[200px]"
+        />
+        <img
+          src={Star3}
+          alt="star"
+          className="absolute bg-re-600 left-[15px] top-[400px]"
+        />
+        <img
+          src={Star4}
+          alt="star"
+          className="absolute bg-re-600 right-[100px] top-[920px]"
+        />
         <div className="show-text lg:w-[55%] w-[90%] mx-auto font-showcase text-center">
           Empowering kids to become innovators of the future
         </div>
@@ -95,14 +121,19 @@ const Home = () => {
           />
         </div>
 
-        <div className="w-[90%] mx-auto lg:h-[70vh] border-2 border-baseOrange">
-          <video autoPlay controls className="w-full h-full object-fill">
+        <div className="w-[90%] mx-auto lg:h-[70vh]">
+          <video
+            autoPlay
+            controls
+            poster={Thumbnail}
+            className="w-full h-full object-fill"
+          >
             <source src={videoShow} type="video/mp4" />
           </video>
         </div>
       </div>
 
-      <section id="programs" className="bg-lightYellow pt-1 my-10">
+      <section id="programs" className="bg-lightYellow pt-1 mt-20 mb-10">
         <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[22%] w-[90%] mx-auto flex items-center justify-between">
           <Link to="our_programs">
             <Button

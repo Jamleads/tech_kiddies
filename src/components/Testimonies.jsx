@@ -1,9 +1,11 @@
 import Button from "./Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ChildImage, ParentImg, arrowRight } from "../assets";
-import { Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import { testimonies } from "../utilities/data";
 import { useState } from "react";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Testimonies = () => {
   const [childTestimonies, setChildTestimonies] = useState(true);
@@ -55,7 +57,7 @@ const Testimonies = () => {
       </div>
 
       <div data-aos="zoom-in" className="lg:w-[80%] w-[90%] mx-auto">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <Swiper pagination modules={[Pagination]} className="mySwiper">
           {testimonies
             .filter((item) => item.isParent === !childTestimonies)
             .map((each) => (

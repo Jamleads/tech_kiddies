@@ -30,3 +30,10 @@ export { default as Film } from "../assets/film.png";
 
 export { default as MinusCircle } from "../assets/minus-circle.png";
 export { default as PlusCircle } from "../assets/plus-circle.png";
+
+export { default as Thumbnail } from "../assets/Thumbnail.png";
+
+export { default as Star1 } from "../assets/Star1.png";
+export { default as Star2 } from "../assets/Star2.png";
+export { default as Star3 } from "../assets/Star3.png";
+export { default as Star4 } from "../assets/Star4.png";
