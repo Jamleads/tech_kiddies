@@ -248,7 +248,7 @@ const Subscriptions = () => {
                   <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}
                   <a
-                    href="https://jamleads.netlify.com/"
+                    href="https://jamleads.netlify.app/"
                     target="_blank"
                     className="text-baseOrange"
                   >
