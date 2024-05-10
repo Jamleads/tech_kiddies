@@ -361,7 +361,7 @@ export const footerSubLinks = [
     links: [
       {
         id: 1,
-        title: "+234 8124 574 84",
+        title: "+234 807 690 0753",
         link: "/",
       },
       {
