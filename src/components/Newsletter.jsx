@@ -22,6 +22,7 @@ const Newsletter = () => {
   return (
     <form onSubmit={handleSubmit} className="flex items-center gap-2">
       <input
+        required
         type="email"
         id="email"
         name="email"

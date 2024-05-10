@@ -27,6 +27,7 @@ const Modal = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="name">Name</label> <br />
                 <input
+                  required
                   type="text"
                   name="name"
                   id="name"
@@ -37,6 +38,7 @@ const Modal = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="phone_number">Phone Number</label> <br />
                 <input
+                  required
                   type="tel"
                   name="phone_number"
                   id="phone_number"
@@ -47,6 +49,7 @@ const Modal = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="email">Email</label> <br />
                 <input
+                  required
                   type="email"
                   id="email"
                   name="email"

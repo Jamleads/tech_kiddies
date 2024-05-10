@@ -29,6 +29,7 @@ const ParentForm = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="name">Name</label> <br />
                 <input
+                  required
                   type="text"
                   name="name"
                   id="name"
@@ -39,6 +40,7 @@ const ParentForm = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="phone_number">Phone Number</label> <br />
                 <input
+                  required
                   type="tel"
                   name="phone_number"
                   id="phone_number"
@@ -49,6 +51,7 @@ const ParentForm = ({ closeModal }) => {
               <div className="">
                 <label htmlFor="email">Email</label> <br />
                 <input
+                  required
                   type="email"
                   id="email"
                   name="email"
@@ -62,6 +65,7 @@ const ParentForm = ({ closeModal }) => {
                 </label>
                 <br />
                 <input
+                  required
                   type="text"
                   id="child_name"
                   name="child_name"
