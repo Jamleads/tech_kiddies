@@ -70,15 +70,13 @@ const Program = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="700"
-            className="flex items-center justify-center lg:mt-10 mb-10"
+            className="flex items-center justify-center mt-5 lg:mt-10 mb-10"
           >
-            {/* <Link to="our_programs"> */}
             <Button
               btnClick={showModal}
               btnText={"Explore Now"}
               btnStyle={`lg:px-5 px-3 py-3 bg-baseOrange border-0 text-xs inter-regular font-bold rounded-full`}
             />
-            {/* </Link> */}
 
             <Button
               btnText={"Explore other programs"}
@@ -249,11 +247,11 @@ const Program = () => {
       </section>
 
       <section className="bg-darkerBlue lg:px-20 py-10 px-5 flex-col flex gap-10">
-        <div className="py-[2px] px-[2px] rounded-full border-[2px] border-mainWhite lg:w-[27%] w-[90%] mx-auto flex items-center justify-between">
+        <div className="py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-mainWhite lg:w-[27%] w-[90%] mx-auto flex items-center justify-between">
           <Button
             btnText={"Application"}
             btnStyle={
-              "border-[2px] text-mainWhite rounded-full text-xs border-mainWhite px-5 py-[2px] bg-transparent"
+              "md:border-[2px] border-[1px] text-mainWhite rounded-full text-xs border-mainWhite px-5 py-[2px] bg-transparent"
             }
           />
 
@@ -325,13 +323,15 @@ const Program = () => {
             className="flex lg:flex-row flex-col items-center gap-10 -mt-[100px]"
           >
             <div className="lg:w-1/2 py-10 px-5 bg-[#00A541] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
-              <h2 className="font-shocase !text-[25px]">
+              <h2 className="font-shocase !text-[25px] text-center leading-8">
                 We have amazing courses
               </h2>
-              <p>Empowering kids to become future creators and innovators.</p>
+              <p className="text-center">
+                Empowering kids to become future creators and innovators.
+              </p>
               <Link to="our_programs">
                 <Button
-                  btnText={"Explore Our Program"}
+                  btnText={"Explore Our Programs"}
                   btnStyle={
                     "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
                   }
@@ -339,10 +339,12 @@ const Program = () => {
               </Link>
             </div>
             <div className="lg:w-1/2 py-10 px-5 bg-[#00ABFD] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
-              <h2 className="font-shocase !text-[25px]">
+              <h2 className="font-shocase !text-[25px] text-center leading-8">
                 Join Our Parent Community
               </h2>
-              <p>Get Involved in Your Child’s Tech Journey.</p>
+              <p className="text-center">
+                Get Involved in Your Child’s Tech Journey.
+              </p>
               <Button
                 btnClick={openParentForm}
                 btnText={"Join Our Community"}
@@ -363,7 +365,7 @@ const Program = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-                <p className="text-xs">
+                <p className="text-[10px]">
                   Designed by{" "}
                   <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}

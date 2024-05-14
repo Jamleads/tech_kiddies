@@ -199,9 +199,13 @@ export const pricingData = [
   {
     id: 1,
     title: "Basic - Tier",
+    priceN: "10000",
+    priceD: "10",
     price: "10,000 / $10",
     discountText: "Ongoing Discount for early subscribers",
     discountPrice: "= 9,000 / $9",
+    discountPriceN: "9000",
+    discountPriceD: "9",
     addedPcakage: [
       {
         id: 1,
@@ -232,9 +236,13 @@ export const pricingData = [
   {
     id: 2,
     title: "Mid - Tier",
+    priceN: "20000",
+    priceD: "20",
     price: "20,000 / $20",
     discountText: "Ongoing Discount for early subscribers",
     discountPrice: "= 18,000 / $18",
+    discountPriceN: "18000",
+    discountPriceD: "18",
     addedPcakage: [
       {
         id: 1,
@@ -261,9 +269,13 @@ export const pricingData = [
   {
     id: 3,
     title: "Premium - Tier",
+    priceN: "50000",
+    priceD: "50",
     price: "N50,000 / $50",
     discountText: "Ongoing Discount for early subscribers",
     discountPrice: "= #48,000/ $48",
+    discountPriceN: "48000",
+    discountPriceD: "48",
     addedPcakage: [
       {
         id: 1,

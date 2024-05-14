@@ -231,4 +231,7 @@ select:focus {
   .pricing h2 {
     font-size: 35px !important;
   }
+  .subVector {
+    display: none !important;
+  }
 }

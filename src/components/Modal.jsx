@@ -64,11 +64,14 @@ const Modal = ({ closeModal }) => {
                   id="location"
                   className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
                 >
-                  <option value="">Select option</option>
+                  <option value="" className="text-red">
+                    Select option
+                  </option>
                   <option value="nigeria">Nigeria</option>
                   <option value="unitesd state">United State</option>
                   <option value="kenya">Kenya</option>
                   <option value="gambia">Gambia</option>
+                  <option value="gambia">Other</option>
                 </select>
               </div>
 

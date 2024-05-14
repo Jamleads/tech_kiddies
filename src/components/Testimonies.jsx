@@ -19,11 +19,11 @@ const Testimonies = () => {
       id="testimonies"
       className="bg-lightYellow py-10 flex flex-col gap-10"
     >
-      <span className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue flex items-center justify-between">
+      <span className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue flex items-center justify-between">
         <Button
           btnText={"Testimonies"}
           btnStyle={
-            "border-[2px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
+            "md:border-[2px] border-[1px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
           }
         />
 

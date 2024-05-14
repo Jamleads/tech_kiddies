@@ -14,9 +14,11 @@ import Testimonies from "../components/Testimonies";
 import { Link } from "react-router-dom";
 import Newsletter from "../components/Newsletter";
 import ParentForm from "../components/ParentForm";
+import Modal from "../components/Modal";
 
 const Subscriptions = () => {
   const [open, setOpen] = useState(null);
+  const [formOpen, setFormOpen] = useState(null);
   const [parentForm, setParentForm] = useState(false);
 
   const shoeFaq = (index) => {
@@ -25,39 +27,51 @@ const Subscriptions = () => {
   const openParentForm = () => {
     setParentForm(!parentForm);
   };
+
   return (
     <>
       <div className={`${parentForm ? "" : "hidden"} bg-red-500`}>
         <ParentForm closeModal={openParentForm} />
       </div>
 
-      <section className="md:h-[100vh] w-full bg-[#FFFAF6] p-1">
+      {/* Enroll form  and its overlay*/}
+      <div className={`${formOpen ? "" : "hidden"} bg-red-500`}>
+        <Modal closeModal={() => setFormOpen(false)} />
+      </div>
+      <div
+        onClick={() => setFormOpen(false)}
+        className={`${
+          formOpen ? "" : "hidden"
+        } overflow-y-hidden modal-backdrop`}
+      ></div>
+
+      <section className="md:h-[80vh] w-full bg-[#FFFAF6] p-1">
         <div className="md:flex items-center justify-between mt-40 md:w-[90%] md:px-0 px-5 mx-auto">
           <div className="md:w-1/2">
-            <img src={SubVector} alt="vector" />
-            <h1 className="font-showcase">
+            <img src={SubVector} alt="vector" className="subVector" />
+            <h1 className="font-showcase !text-[50px] md:text-left text-center">
               Get started with{" "}
               <span className=" text-baseOrange">Tech Kiddies</span> Flexible
               classes
             </h1>
-            <p className="inter-small md:w-2/3">
+            <p className="inter-small md:w-2/3 text-center">
               You don’t have to worry about your kids busy schedule, get them
               started with our flexible classes!
             </p>
           </div>
 
-          <div className="md:w-1/2 flex items-center justify-center">
+          <div className="md:w-1/2 flex items-center justify-center my-10">
             <img src={SubHeroImage} alt="sub-here-image" />
           </div>
         </div>
       </section>
 
       <section className="w-full pb-20 p-1 bg-[#F8EEE8] flex flex-col gap-10">
-        <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[22%] w-[90%] mx-auto flex items-center">
+        <div className="mt-10 py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue lg:w-[19%] justify-between w-[85%] mx-auto flex items-center">
           <Button
             btnText={"Application"}
             btnStyle={
-              "border-[2px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
+              "md:border-[2px] border-[1px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
             }
           />
 
@@ -67,18 +81,18 @@ const Subscriptions = () => {
           </button>
         </div>
 
-        <div className="font-showcase text-center">
+        <div className="font-showcase !text-[40px] !leading-10 text-center">
           See available courses here
         </div>
 
         <div className="md:w-[90%] mx-auto md:px-0 flex flex-col gap-5">
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-3">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-3 justify-center items-center">
             {subscriotionCourse.slice(0, 3).map((item, index) => (
               <div
                 key={index}
                 data-aos="flip-left"
                 data-aos-duration="1000"
-                className={`flex flex-col items-center md:w-[400px] w-[370px] h-[370px] md:h-[400px] justify-center gap-5 rounded-full ${item.bgColor}`}
+                className={`flex flex-col items-center md:w-[400px] md:h-[400px] w-[350px] h-[350px] justify-center gap-5 rounded-full mx-auto ${item.bgColor}`}
               >
                 <div className="bg-[#FBF9FF] rounded-full w-[150px] h-[150px] flex items-center justify-center">
                   <img src={item.icon} alt="" />
@@ -98,7 +112,7 @@ const Subscriptions = () => {
                 key={index}
                 data-aos="flip-left"
                 data-aos-duration="1000"
-                className={`flex flex-col items-center md:w-[400px] w-[370px] h-[370px] md:h-[400px] justify-center gap-5 rounded-full ${item.bgColor}`}
+                className={`flex flex-col items-center md:w-[400px] md:h-[400px] w-[350px] h-[350px] justify-center gap-5 rounded-full mx-auto ${item.bgColor}`}
               >
                 <div className="bg-[#FBF9FF] rounded-full w-[150px] h-[150px] flex items-center justify-center">
                   <img src={item.icon} alt="" />
@@ -115,15 +129,15 @@ const Subscriptions = () => {
       </section>
 
       <section>
-        <Pricing />
+        <Pricing btnClick={() => setFormOpen(true)} />
       </section>
 
       <section>
         <div className="bg-[#EFF2FB]">
           <div className="w-[90%] mx-auto md:flex justify-between py-20">
             <div className="md:w-[45%]">
-              <h1 className="font-showcase !text[30px]">FAQs</h1>
-              <p className="md:w-[80%]">
+              <h1 className="font-showcase !text[30px] text-center">FAQs</h1>
+              <p className="md:w-[80%] text-center">
                 What the parents worry about and how we got them the perfect
                 fit. Can’t find the answer you’re looking for? Please chat to{" "}
                 <a href="" className="text-baseOrange">
@@ -134,15 +148,10 @@ const Subscriptions = () => {
 
             <div className="md:w-[55%] flex flex-col gap-5">
               {faqData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`p-8 ${
-                    open === index ? "bg-[#FCFDFF] rounded-lg shadow-lg" : ""
-                  } `}
-                >
+                <div key={index} className={`p-8 ${open === index ? "" : ""} `}>
                   <div className="flex items-start justify-between gap-10">
                     <p className="font-showcase !text-[18px] !leading-6">
-                      {item.title}
+                      <p className=" font-light">{item.title}</p>
                     </p>
 
                     <img
@@ -204,14 +213,16 @@ const Subscriptions = () => {
             data-aos="zoom-in"
             className="flex lg:flex-row flex-col items-center gap-10 -mt-[100px]"
           >
-            <div className="lg:w-1/2 py-10 px-5 bg-[#00A541] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
-              <h2 className="font-shocase !text-[25px]">
+            <div className="lg:w-1/2 py-10 px-5 bg-[#00A541] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5 text-center">
+              <h2 className="font-shocase !text-[25px] text-center leading-8">
                 We have amazing courses
               </h2>
-              <p>Empowering kids to become future creators and innovators.</p>
+              <p className="text-center">
+                Empowering kids to become future creators and innovators.
+              </p>
               <Link to="our_programs">
                 <Button
-                  btnText={"Explore Our Program"}
+                  btnText={"Explore Our Programs"}
                   btnStyle={
                     "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
                   }
@@ -219,10 +230,12 @@ const Subscriptions = () => {
               </Link>
             </div>
             <div className="lg:w-1/2 py-10 px-5 bg-[#00ABFD] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
-              <h2 className="font-shocase !text-[25px]">
+              <h2 className="font-shocase !text-[25px] text-center leading-8">
                 Join Our Parent Community
               </h2>
-              <p>Get Involved in Your Child’s Tech Journey.</p>
+              <p className="text-center">
+                Get Involved in Your Child’s Tech Journey.
+              </p>
               <Button
                 btnClick={openParentForm}
                 btnText={"Join Our Community"}
@@ -243,7 +256,7 @@ const Subscriptions = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-                <p className="text-xs">
+                <p className="text-[10px]">
                   Designed by{" "}
                   <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}

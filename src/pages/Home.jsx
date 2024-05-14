@@ -30,6 +30,7 @@ import Pricing from "../components/Pricing";
 import Testimonies from "../components/Testimonies";
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
   const [parentForm, setParentForm] = useState(false);
   const [btnToSticky, setBtnToSticky] = useState(false);
 
@@ -52,7 +53,6 @@ const Home = () => {
   const openParentForm = () => {
     setParentForm(!parentForm);
   };
-  const [open, setOpen] = useState(false);
 
   const showEnrollForm = () => {
     setOpen(!open);
@@ -71,10 +71,11 @@ const Home = () => {
 
       {/* Enroll form  and its overlay*/}
       <div className={`${open ? "" : "hidden"} bg-red-500`}>
-        <Modal closeModal={showEnrollForm} />
+        <Modal closeModal={() => setOpen(false)} />
       </div>
       <div
         onClick={showEnrollForm}
+        x
         className={`${open ? "" : "hidden"} overflow-y-hidden modal-backdrop`}
       ></div>
 
@@ -83,22 +84,22 @@ const Home = () => {
         <img
           src={Star1}
           alt="star"
-          className=" absolute bg-re-600 left-[150px] top-[150px]"
+          className=" absolute md:left-[150px] left-5 md:top-[150px]"
         />
         <img
           src={Star2}
           alt="star"
-          className=" absolute bg-re-600 right-[150px] top-[200px]"
+          className=" absolute md:right-[150px] right-6 md:top-[200px] top-[180px]"
         />
         <img
           src={Star3}
           alt="star"
-          className="absolute bg-re-600 left-[15px] top-[400px]"
+          className="absolute md:left-[15px] left-0 top-[160px] md:top-[400px]"
         />
         <img
           src={Star4}
           alt="star"
-          className="absolute bg-re-600 right-[100px] top-[920px]"
+          className="absolute right-[100px] top-[920px]"
         />
         <div className="show-text lg:w-[55%] w-[90%] mx-auto font-showcase text-center">
           Empowering kids to become innovators of the future
@@ -108,7 +109,7 @@ const Home = () => {
           className={`${
             open || parentForm ? "hidden" : ""
           } mainBtn flex items-center justify-center ${
-            btnToSticky ? "float-btn bg-baseOrange rounded-2xl" : ""
+            btnToSticky ? "float-btn bg-white rounded-2xl" : ""
           }`}
         >
           <Link to="our_programs">
@@ -134,12 +135,12 @@ const Home = () => {
       </div>
 
       <section id="programs" className="bg-lightYellow pt-1 mt-20 mb-10">
-        <div className="mt-10 py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue lg:w-[22%] w-[90%] mx-auto flex items-center justify-between">
+        <div className="mt-10 py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue lg:w-[22%] w-[80%] mx-auto flex items-center justify-between">
           <Link to="our_programs">
             <Button
               btnText={"Application"}
               btnStyle={
-                "border-[2px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
+                "md:border-[2px] border-[1px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
               }
             />
           </Link>
@@ -205,7 +206,7 @@ const Home = () => {
         </div>
 
         <div className="bg-[#fff]">
-          <Pricing atHome={true} />
+          <Pricing atHome={true} btnClick={() => setOpen(true)} />
         </div>
 
         <div id="about" className="mt-24 flex flex-col lg:flex-row gap-16">
@@ -253,11 +254,11 @@ const Home = () => {
 
           <div className="lg:w-1/2">
             <div className="lg:w-[80%] w-[90%] mx-auto py-10 flex flex-col gap-10">
-              <div className="py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue flex items-center w-[300px] justify-between">
+              <div className="py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px]border-darkerBlue flex items-center w-[300px] justify-between mx-auto">
                 <Button
                   btnText={"About Us"}
                   btnStyle={
-                    "border-[2px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
+                    "md:border-[2px] border-[1px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
                   }
                 />
 
@@ -298,12 +299,12 @@ const Home = () => {
       <section className="mt-20 bg-mainWhite flex flex-col gap-10">
         <span
           data-aos="flip-right"
-          className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full border-[2px] border-darkerBlue flex items-center justify-between"
+          className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue flex items-center justify-between"
         >
           <Button
             btnText={"About Us"}
             btnStyle={
-              "border-[2px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
+              "md:border-[2px] border-[1px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
             }
           />
 
@@ -407,13 +408,15 @@ const Home = () => {
             className="flex lg:flex-row flex-col items-center gap-10 -mt-[100px]"
           >
             <div className="lg:w-1/2 py-10 px-5 bg-[#00A541] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
-              <h2 className="font-shocase !text-[25px]">
+              <h2 className="font-shocase !text-[25px] text-center">
                 We have amazing courses
               </h2>
-              <p>Empowering kids to become future creators and innovators.</p>
+              <p className="text-center">
+                Empowering kids to become future creators and innovators.
+              </p>
               <Link to="our_programs">
                 <Button
-                  btnText={"Explore Our Program"}
+                  btnText={"Explore Our Programs"}
                   btnStyle={
                     "px-5 py-3 rounded-full text-darkerBlue border-0 bg-mainWhite text-xs"
                   }
@@ -421,10 +424,12 @@ const Home = () => {
               </Link>
             </div>
             <div className="lg:w-1/2 py-10 px-5 bg-[#00ABFD] text-mainWhite rounded-2xl flex flex-col items-center justify-center gap-5">
-              <h2 className="font-shocase !text-[25px]">
+              <h2 className="font-shocase !text-[25px] text-center leading-8">
                 Join Our Parent Community
               </h2>
-              <p>Get Involved in Your Child’s Tech Journey.</p>
+              <p className="text-center">
+                Get Involved in Your Child’s Tech Journey.
+              </p>
               <Button
                 btnClick={openParentForm}
                 btnText={"Join Our Community"}
@@ -445,7 +450,7 @@ const Home = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-                <p className="text-xs">
+                <p className="!text-[10px]">
                   Designed by{" "}
                   <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}
