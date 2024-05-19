@@ -234,4 +234,7 @@ select:focus {
   .subVector {
     display: none !important;
   }
+  .designer {
+    font-size: 10px !important;
+  }
 }

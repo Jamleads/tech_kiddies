@@ -254,7 +254,7 @@ const Home = () => {
 
           <div className="lg:w-1/2">
             <div className="lg:w-[80%] w-[90%] mx-auto py-10 flex flex-col gap-10">
-              <div className="py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px]border-darkerBlue flex items-center w-[300px] justify-between mx-auto">
+              <div className="py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue flex items-center w-[300px] justify-between mx-auto">
                 <Button
                   btnText={"About Us"}
                   btnStyle={
@@ -450,8 +450,8 @@ const Home = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-                <p className="!text-[10px]">
-                  Designed by{" "}
+                <t className="designer !text-[10px]">
+                  Designed by
                   <span className="text-baseOrange">Taofeeqah Bello</span> and
                   Developed by{" "}
                   <a
@@ -462,7 +462,7 @@ const Home = () => {
                     Jamleads
                   </a>
                   , &copy; 2024 Tech Kiddies
-                </p>
+                </t>
               </div>
 
               <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">
