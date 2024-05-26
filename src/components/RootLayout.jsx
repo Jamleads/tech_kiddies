@@ -8,7 +8,6 @@ const RootLayout = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const path = useLocation();
   const location = path.pathname;
-  console.log("location", location);
 
   useEffect(() => {
     const handleDOMLoaded = () => {
@@ -37,6 +36,7 @@ const RootLayout = () => {
               <img src={Logo} alt="" />
             </Link>
           </div>
+
           <div className="nav-links">
             <ul className="flex items-center gap-5">
               {navData.map((page) => (
@@ -50,6 +50,7 @@ const RootLayout = () => {
               ))}
             </ul>
           </div>
+
           <div className="action">
             <Link to="our_programs">
               <button
@@ -60,6 +61,22 @@ const RootLayout = () => {
                 } px-5 py-3 rounded-full border-0 text-mainWhite text-xs`}
               >
                 Explore Our Programs
+              </button>
+            </Link>
+          </div>
+
+          <div className="sub_btn_mobil md:hidden">
+            <Link to={location === "/subscribe" ? "our_programs" : "subscribe"}>
+              <button
+                className={`${
+                  location === "/our_programs"
+                    ? " bg-baseOrange"
+                    : " bg-darkerBlue"
+                } px-5 py-3 rounded-full border-0 text-mainWhite text-xs`}
+              >
+                {location === "/subscribe"
+                  ? "Explore Our Programs"
+                  : "Subscriptions"}
               </button>
             </Link>
           </div>

@@ -45,7 +45,7 @@ const Program = () => {
         className={`${open ? "" : "hidden"} overflow-y-hidden modal-backdrop`}
       ></div>
 
-      <section className="programShocase lg:h-[60vh] flex items-end justify-end">
+      <section className="programShocase md:h-[70vh] flex items-end justify-end">
         <div className="=flex flex-col gap-10">
           <div className="text-center flex flex-col gap-5 mt-10 show-text2">
             <h1
@@ -329,7 +329,7 @@ const Program = () => {
               <p className="text-center">
                 Empowering kids to become future creators and innovators.
               </p>
-              <Link to="our_programs">
+              <Link to="/">
                 <Button
                   btnText={"Explore Our Programs"}
                   btnStyle={
@@ -365,19 +365,11 @@ const Program = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-                <p className="text-[10px]">
-                  Designed by{" "}
-                  <span className="text-baseOrange">Taofeeqah Bello</span> and
-                  Developed by{" "}
-                  <a
-                    href="https://jamleads.netlify.app/"
-                    target="_blank"
-                    className="text-baseOrange"
-                  >
-                    Jamleads
-                  </a>
-                  , &copy; 2024 Tech Kiddies
-                </p>
+                <t className="designer !text-[10px]">
+                  UI design by{" "}
+                  <span className="text-baseOrange">Taofeeqah Bello</span>,
+                  &copy; 2024 Tech Kiddies
+                </t>
               </div>
 
               <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">

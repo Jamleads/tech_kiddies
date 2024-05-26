@@ -1,13 +1,31 @@
 /* eslint-disable react/prop-types */
+import { useLocation } from "react-router-dom";
 import { KidImg1, Logo } from "../assets";
 import { moveAnimation } from "../utilities/data";
 
 const Modal = ({ closeModal }) => {
+  const path = useLocation();
+  const location = path.pathname;
   return (
-    <div className="modal lg:w-[70%] mx-auto w-[90%]">
+    <div
+      className={`modal lg:w-[70%] mx-auto w-[90%] ${
+        location === "/contact" ? "shadow-2xl" : ""
+      } `}
+    >
       <div className=" flex">
         <div className="lg:w-1/2 formSide">
-          <div className="w-[80%] mx-auto py-10">
+          <div className="w-[80%] mx-auto py-10 relative">
+            {location === "/contact" ? (
+              ""
+            ) : (
+              <div
+                className=" absolute top-[40px] right-[5px] text-[25px] font-bold md:hidden block"
+                onClick={closeModal}
+              >
+                X
+              </div>
+            )}
+
             <div className="brand">
               <img src={Logo} alt="" />
             </div>
@@ -22,7 +40,7 @@ const Modal = ({ closeModal }) => {
             <form
               action="https://formspree.io/f/xvoebyyv"
               method="POST"
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-3"
             >
               <div className="">
                 <label htmlFor="name">Name</label> <br />
@@ -32,7 +50,7 @@ const Modal = ({ closeModal }) => {
                   name="name"
                   id="name"
                   placeholder="Enter your name"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
               <div className="">
@@ -43,7 +61,7 @@ const Modal = ({ closeModal }) => {
                   name="phone_number"
                   id="phone_number"
                   placeholder="Enter your phone pumber"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
               <div className="">
@@ -54,7 +72,7 @@ const Modal = ({ closeModal }) => {
                   id="email"
                   name="email"
                   placeholder="Enter your email"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
               <div className="">
@@ -83,7 +101,7 @@ const Modal = ({ closeModal }) => {
                 <select
                   name="how_did_you_hear_about_tech_kiddies"
                   id="how_did_you_hear_about_tech_kiddies"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 >
                   <option value="" className="font-lighter">
                     Select option
@@ -114,14 +132,22 @@ const Modal = ({ closeModal }) => {
               </div>
             ))}
           </div>
-          <img src={KidImg1} alt="" className="w-[90%] mx-auto z-20" />
+          <img
+            src={KidImg1}
+            alt=""
+            className="w-[90%] h-[500px] mx-auto z-20"
+          />
 
-          <button
-            onClick={closeModal}
-            className=" bg-white px-10 py-2 rounded-full absolute right-5 top-5"
-          >
-            close
-          </button>
+          {location === "/contact" ? (
+            ""
+          ) : (
+            <button
+              onClick={closeModal}
+              className=" bg-white px-10 py-2 rounded-full absolute right-5 top-5"
+            >
+              close
+            </button>
+          )}
         </div>
       </div>
     </div>

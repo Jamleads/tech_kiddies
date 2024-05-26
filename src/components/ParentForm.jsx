@@ -7,7 +7,13 @@ const ParentForm = ({ closeModal }) => {
     <div className="modal lg:w-[70%] w-[90%] mx-auto bg-red-400">
       <div className=" flex">
         <div className="md:w-1/2 formSide">
-          <div className="md:w-[80%] w-[90%] mx-auto py-10">
+          <div className="md:w-[80%] w-[90%] mx-auto py-10 relative">
+            <div
+              className=" absolute top-[40px] right-[5px] text-[25px] font-bold md:hidden block"
+              onClick={closeModal}
+            >
+              X
+            </div>
             <div className="brand">
               <img src={Logo} alt="" />
             </div>
@@ -34,7 +40,7 @@ const ParentForm = ({ closeModal }) => {
                   name="name"
                   id="name"
                   placeholder="Enter your name"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
               <div className="">
@@ -45,7 +51,7 @@ const ParentForm = ({ closeModal }) => {
                   name="phone_number"
                   id="phone_number"
                   placeholder="Enter your phone pumber"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
               <div className="">
@@ -56,7 +62,7 @@ const ParentForm = ({ closeModal }) => {
                   id="email"
                   name="email"
                   placeholder="Enter your email"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
               <div className="">
@@ -70,7 +76,7 @@ const ParentForm = ({ closeModal }) => {
                   id="child_name"
                   name="child_name"
                   placeholder="Enter your email"
-                  className="px-5 py-2 mt-3 bg-transparent border-[1px] border-black w-full rounded-full"
+                  className="px-5 py-2 bg-transparent border-[1px] border-black w-full rounded-full"
                 />
               </div>
 

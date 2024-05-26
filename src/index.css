@@ -168,7 +168,10 @@ select:focus {
   body {
     overflow-x: hidden !important;
   }
-  .nav-links {
+  .nav-links,
+  .action,
+  .imageSide,
+  .reviewImage {
     display: none;
   }
   .nav {
@@ -218,12 +221,7 @@ select:focus {
     font-size: 30px !important;
     line-height: 30px !important;
   }
-  .imageSide {
-    display: none;
-  }
-  .reviewImage {
-    display: none;
-  }
+
   .pricing h1 {
     font-size: 37px !important;
     line-height: 50px !important;

@@ -346,8 +346,8 @@ export const footerSubLinks = [
       },
       {
         id: 3,
-        title: "Contatc Us",
-        link: "/",
+        title: "Contact Us",
+        link: "/contact",
       },
     ],
   },
@@ -391,6 +391,11 @@ export const footerSubLinks = [
         id: 1,
         title: "YouTube",
         link: "https://www.youtube.com/@TechKiddies",
+      },
+      {
+        id: 1,
+        title: "WhatsApp",
+        link: "https://www.whatsapp.com/09060995945",
       },
       {
         id: 2,

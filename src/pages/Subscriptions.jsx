@@ -45,7 +45,7 @@ const Subscriptions = () => {
         } overflow-y-hidden modal-backdrop`}
       ></div>
 
-      <section className="md:h-[80vh] w-full bg-[#FFFAF6] p-1">
+      <section className="md:h-[100vh] h-auto w-full bg-[#FFFAF6] p-1">
         <div className="md:flex items-center justify-between mt-40 md:w-[90%] md:px-0 px-5 mx-auto">
           <div className="md:w-1/2">
             <img src={SubVector} alt="vector" className="subVector" />
@@ -67,7 +67,7 @@ const Subscriptions = () => {
       </section>
 
       <section className="w-full pb-20 p-1 bg-[#F8EEE8] flex flex-col gap-10">
-        <div className="mt-10 py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue lg:w-[19%] justify-between w-[85%] mx-auto flex items-center">
+        <div className="mt-10 py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue lg:w-[350px] justify-between w-[85%] mx-auto flex items-center">
           <Button
             btnText={"Application"}
             btnStyle={
@@ -136,7 +136,9 @@ const Subscriptions = () => {
         <div className="bg-[#EFF2FB]">
           <div className="w-[90%] mx-auto md:flex justify-between py-20">
             <div className="md:w-[45%]">
-              <h1 className="font-showcase !text[30px] text-center">FAQs</h1>
+              <h1 className="font-showcase !text[30px] text-center md:text-start">
+                FAQs
+              </h1>
               <p className="md:w-[80%] text-center">
                 What the parents worry about and how we got them the perfect
                 fit. Can’t find the answer you’re looking for? Please chat to{" "}
@@ -220,7 +222,7 @@ const Subscriptions = () => {
               <p className="text-center">
                 Empowering kids to become future creators and innovators.
               </p>
-              <Link to="our_programs">
+              <Link to="/our_programs">
                 <Button
                   btnText={"Explore Our Programs"}
                   btnStyle={
@@ -256,19 +258,11 @@ const Subscriptions = () => {
                   Empowering kids to become future creators and innovators.
                 </p>
                 <Newsletter />
-                <p className="text-[10px]">
-                  Designed by{" "}
-                  <span className="text-baseOrange">Taofeeqah Bello</span> and
-                  Developed by{" "}
-                  <a
-                    href="https://jamleads.netlify.app/"
-                    target="_blank"
-                    className="text-baseOrange"
-                  >
-                    Jamleads
-                  </a>
-                  , &copy; 2024 Tech Kiddies
-                </p>
+                <t className="designer !text-[10px]">
+                  UI design by{" "}
+                  <span className="text-baseOrange">Taofeeqah Bello</span>,
+                  &copy; 2024 Tech Kiddies
+                </t>
               </div>
 
               <div className="lg:w-1/2 flex lg:flex-row flex-col gap-5 lg:justify-between mt-5">

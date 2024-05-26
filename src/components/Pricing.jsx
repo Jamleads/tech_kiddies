@@ -11,14 +11,14 @@ const Pricing = ({ atHome, btnClick }) => {
 
   return (
     <div className="pricing w-[90%] mx-auto flex flex-col gap-10">
-      <div className="mt-10 py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue lg:w-[370px] w-[90%] mx-auto flex items-center">
+      <div className="mt-10 py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue lg:w-[340px] w-[90%] mx-auto flex items-center justify-between">
         <Button
           btnText={"Application"}
           btnStyle={
             "md:border-[2px] border-[1px] rounded-full text-xs border-darkerBlue px-5 py-[2px] bg-transparent"
           }
         />
-        {/* className="py-[2px] text-xs px-[2px] bg-transparent flex items-center gap-2"> */}
+
         <button className="py-[2px] px-[2px] bg-transparent flex items-center text-xs gap-2">
           <span>Enjoy 5% discount on Booking</span>
           <img src={arrowRight} alt="" />

@@ -451,17 +451,9 @@ const Home = () => {
                 </p>
                 <Newsletter />
                 <t className="designer !text-[10px]">
-                  Designed by
-                  <span className="text-baseOrange">Taofeeqah Bello</span> and
-                  Developed by{" "}
-                  <a
-                    href="https://jamleads.netlify.app/"
-                    target="_blank"
-                    className="text-baseOrange"
-                  >
-                    Jamleads
-                  </a>
-                  , &copy; 2024 Tech Kiddies
+                  UI design by{" "}
+                  <span className="text-baseOrange">Taofeeqah Bello</span>,
+                  &copy; 2024 Tech Kiddies
                 </t>
               </div>
 
