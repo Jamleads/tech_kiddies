@@ -3,6 +3,7 @@ import { useState } from "react";
 import { arrowRight, CheckedIcon } from "../assets";
 import { pricingData } from "../utilities/data";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Pricing = ({ atHome, btnClick }) => {
   const [yearly, setYearly] = useState(false);
@@ -132,7 +133,13 @@ const Pricing = ({ atHome, btnClick }) => {
 
       {}
       <div className="flex justify-center mb-20">
-        {atHome ? <Button btnClick={btnClick} btnText={"Explore Now"} /> : ""}
+        {atHome ? (
+          <Link to="/subscribe">
+            <Button btnText={"Explore Now"} />
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import Button from "./Button";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ChildImage, ParentImg, arrowRight } from "../assets";
+// import { ChildImage, ParentImg } from "../assets";
 import { Pagination } from "swiper/modules";
 import { testimonies } from "../utilities/data";
 import { useState } from "react";
@@ -19,18 +19,13 @@ const Testimonies = () => {
       id="testimonies"
       className="bg-lightYellow py-10 flex flex-col gap-10"
     >
-      <span className="w-[200px] mx-auto py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue flex items-center justify-between">
+      <span className="w-[120px] mx-auto py-[2px] px-[2px] rounded-full md:border-[2px] border-[1px] border-darkerBlue flex items-center justify-center">
         <Button
           btnText={"Testimonies"}
           btnStyle={
             "md:border-[2px] border-[1px] text-xs rounded-full border-darkerBlue px-5 py-[2px] bg-transparent"
           }
         />
-
-        <button className="py-[2px] text-xs px-[2px] bg-transparent flex items-center gap-2">
-          <span>Parent</span>
-          <img src={arrowRight} alt="" />
-        </button>
       </span>
 
       <h1 className="font-showcase text-center show-text">What People Say</h1>
@@ -56,14 +51,14 @@ const Testimonies = () => {
         />
       </div>
 
-      <div data-aos="zoom-in" className="lg:w-[80%] w-[90%] mx-auto">
+      <div data-aos="zoom-in" className="lg:w-[60%] w-[90%] mx-auto">
         <Swiper pagination modules={[Pagination]} className="mySwiper">
           {testimonies
             .filter((item) => item.isParent === !childTestimonies)
             .map((each) => (
               <SwiperSlide key={each.id}>
                 <div className="testimonies lg:h-[350px] flex lg:flex-row flex-col items-center">
-                  <div className="lg:w-[55%] lg:px-16 px-8 lg:h-full h-[400px] flex items-center justify-center bg-mainWhite lg:rounded-s-2xl">
+                  <div className="lg:w-[100%] px-8  lg:h-full h-[400px] flex items-center justify-center bg-mainWhite lg:rounded-s-2xl">
                     <div className="text-darkerBlue flex flex-col gap-5">
                       <h1 className="inter-small !text-[25px] !leading-10 !font-light">
                         {each.testMessage}
@@ -77,13 +72,13 @@ const Testimonies = () => {
                     </div>
                   </div>
 
-                  <div className="lg:w-[45%] h-full reviewImage">
+                  {/* <div className="lg:w-[45%] h-full reviewImage">
                     <img
                       src={each.isParent === true ? ParentImg : ChildImage}
                       alt=""
                       className="w-full h-full rounded-r-2xl"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </SwiperSlide>
             ))}

@@ -313,19 +313,23 @@ export const faqData = [
       "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
   },
   {
-    title: "How do I make payment?",
+    title: "Is the class rate affordable?",
     content:
-      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+      "According to research, Tech Kiddies offers the best courses at an affordable rate",
   },
   {
-    title: "What ages are these courses made for ?",
+    title: "How do I make payment?",
     content:
-      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+      "Kindly fill the form and find attached Tech Kiddies account details",
+  },
+  {
+    title: "What ages are these courses made for?",
+    content: "These courses are designed for ages 5 to 16.",
   },
   {
     title: "Can my 3 year old get started with Tech?",
     content:
-      "Classes are self-paced and kids can take the classes at any preferable time. Most kids spend between 1 hour to 2 hours per week to learn.",
+      "We've got the package for kids between 2 to 5 years. They learn via entertaining videos.",
   },
 ];
 

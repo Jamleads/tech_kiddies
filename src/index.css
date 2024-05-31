@@ -23,7 +23,6 @@
 body {
   background-color: #ffffff;
   font-family: "Nunito", sans-serif;
-  /* scroll-behavior: smooth !important; */
 }
 .inter-small {
   font-family: "Nunito", sans-serif;
@@ -43,8 +42,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height: 500px; */
-  /* background-color: red; */
 }
 .course img {
   width: 100%;

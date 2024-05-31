@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   arrowRight,
   MinusCircle,
@@ -27,6 +27,9 @@ const Subscriptions = () => {
   const openParentForm = () => {
     setParentForm(!parentForm);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -164,7 +167,7 @@ const Subscriptions = () => {
                     />
                   </div>
                   {open === index && (
-                    <p className=" font-light text-[12px]">{item.content}</p>
+                    <p className="font-light text-[20px]">{item.content}</p>
                   )}
                 </div>
               ))}
